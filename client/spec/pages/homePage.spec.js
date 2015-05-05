@@ -39,10 +39,13 @@ describe('The Home Page', function() {
 
   describe('rendering', function () {
 
-    it('should produce the correct HTML', function () {
+    it('should produce the correct HTML for the time', function () {
       homePage.render();
-      expect(homePage.el.innerHTML).toContain('<div>Hello, World!</div>');
+
+      var time_element = homePage.$el.find(".time").text();
+      expect(time_element).toMatch(/\d+:\d+(a|p)[m]/);
     });
+
 
     it('returns the view object', function() {
       expect(homePage.render()).toEqual(homePage);
