@@ -27,4 +27,52 @@ describe('The Menu Page', function() {
 
   });
 
+  describe('handling button events', function(){
+
+    describe('top button clicking', function(){
+
+      it('should call function goToFeature1', function(){
+        spyOn(menuPage, 'goToFeature1');
+        menuPage.setButtonEvents();
+        menuPage.trigger('top');
+        expect(menuPage.goToFeature1).toHaveBeenCalled();
+      });
+
+    });
+
+    describe('right button clicking', function(){
+
+      it('should call function goToFeature2', function(){
+        spyOn(menuPage, 'goToFeature2');
+        menuPage.setButtonEvents();
+        menuPage.trigger('right');
+        expect(menuPage.goToFeature2).toHaveBeenCalled();
+      });
+
+    });
+
+    describe('bottom button clicking', function(){
+
+      it('should call function goToFeature3', function(){
+        spyOn(menuPage, 'goToFeature3');
+        menuPage.setButtonEvents();
+        menuPage.trigger('bottom');
+        expect(menuPage.goToFeature3).toHaveBeenCalled();
+      });
+
+    });
+
+    describe('left button clicking', function(){
+
+      it('should call function goToFeature4', function(){
+        spyOn(menuPage, 'goToFeature4');
+        menuPage.setButtonEvents();
+        menuPage.trigger('left');
+        expect(menuPage.goToFeature4).toHaveBeenCalled();
+      });
+
+    });
+
+  });
+
 });

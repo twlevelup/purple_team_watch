@@ -13,6 +13,30 @@ var menuView = PageView.extend({
 
   template: require('../../templates/pages/menu.hbs'),
 
+  buttonEvents: {
+    top: 'goToFeature1',
+    right: 'goToFeature2',
+    bottom: 'goToFeature3',
+    left: 'goToFeature4'
+  },
+
+  goToFeature1: function() {
+    //to be implemented
+  },
+
+  goToFeature2: function() {
+    //to be implemented
+  },
+
+  goToFeature3: function() {
+    //to be implemented
+  },
+
+  goToFeature4: function() {
+    //to be implemented
+    // console.log('amy clicked');
+  },
+
   render: function() {
     this.$el.html(this.template());
     return this;
