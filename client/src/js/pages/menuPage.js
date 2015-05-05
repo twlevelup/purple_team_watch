@@ -14,14 +14,10 @@ var menuView = PageView.extend({
   template: require('../../templates/pages/menu.hbs'),
 
   render: function() {
-
     this.$el.html(this.template());
-
     return this;
-
   }
 
-}  
-);
+});
 
 module.exports = menuView;
