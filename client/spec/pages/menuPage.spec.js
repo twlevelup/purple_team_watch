@@ -18,7 +18,7 @@ describe('The Menu Page', function() {
 
     it('should produce the correct HTML', function () {
       menuPage.render();
-      expect(menuPage.el.innerHTML).toContain('<div>Menu View!</div>');
+      expect(menuPage.el.innerHTML).toContain('<div class="top-tri">Feature 1</div>');
     });
 
     it('returns the view object', function() {
