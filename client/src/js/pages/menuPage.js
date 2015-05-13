@@ -22,6 +22,7 @@ var menuView = PageView.extend({
 
   goToFeature1: function() {
     //to be implemented
+    global.App.navigate('question', true);
   },
 
   goToFeature2: function() {
