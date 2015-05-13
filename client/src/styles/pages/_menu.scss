@@ -8,41 +8,46 @@
   position: absolute;
   border-radius: 3em;
   top: 5%;
-  left: 5%
+  left: 5%;
+  maring: 0 auto;
 }
 
 .tri-wrapper {
   height: 100%;
+  width: 100%;
   position: relative;
   z-index: 10;
-  color: blue;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
 }
 
 .top-tri, .bottom-tri, .right-tri, .left-tri {
   text-align: center;
-  height: 33%;
-  line-height: 4;
   text-transform: uppercase;
-  position: absolute;
   color: #FFF;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
 }
 
 .top-tri, .bottom-tri {
-  width: 100%;
+  width: 100px;
 }
 
 .right-tri, .left-tri {
   display: inline-block;
-  width: 50%;
-  top: 100px;
+  width: 100px;
 }
 
 .top-tri {
-  top: 0;
+  top: 25px;
+  left: 86px;
 }
 
 .bottom-tri {
-  bottom: 0;
+  bottom: 25px;
+  left: 86px;
 }
 
 .right-tri {
