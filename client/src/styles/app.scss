@@ -3,3 +3,8 @@
 @import 'watch';
 @import 'pages/home';
 @import 'pages/menu';
+@import 'fontawesome/font-awesome';
+
+.power {
+  z-index: 1000;
+}
