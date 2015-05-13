@@ -84,6 +84,14 @@ Replace it and describe with fit or fdescribe
 
 Look at the further reading section below ;-)
 
+**How do i run `grunt pre-commit` on Windows?**
+
+Run this command manually on the command line instead
+
+```
+jscs --fix Gruntfile.js ./grunt/*.js ./client/src/js/**/*.js ./client/spec/*.spec.js && grunt test
+```
+
 ## Further Reading
 
 ### [Backbone Fundamentals](http://addyosmani.github.io/backbone-fundamentals/)

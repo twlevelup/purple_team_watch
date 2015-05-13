@@ -6,11 +6,13 @@ var Router = require('./framework/router.js'),
   MenuPage = require('./pages/menuPage'),
   QuestionPage = require('./pages/questionPage'),
   DiseasePage = require('./pages/diseasePage'),
+  PhysicalOrEmotional = require('./pages/physicalOrEmotionalPage'),
   homePage = new HomePage(),
   contactsPage = new ContactsPage(),
   menuPage = new MenuPage(),
   questionPage = new QuestionPage(),
-  diseasePage = new DiseasePage();
+  diseasePage = new DiseasePage(),
+  physicalOrEmotional = new PhysicalOrEmotional();
 
 var AppRouter = Router.extend({
 
@@ -19,7 +21,8 @@ var AppRouter = Router.extend({
     menu: 'menu',
     contacts: 'contacts',
     question: 'question',
-    disease: 'disease'
+    disease: 'disease',
+    physicalOrEmotional: 'physicalOrEmotional'
   },
 
   home: function() {
@@ -40,6 +43,10 @@ var AppRouter = Router.extend({
 
   disease: function() {
     this.renderView(diseasePage);
+  },
+
+  physicalOrEmotional: function () {
+    this.renderView(physicalOrEmotional);
   }
 
 });

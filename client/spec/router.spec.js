@@ -3,7 +3,8 @@
 var AppRouter = require('../src/js/router.js'),
   PageView = require('../src/js/framework/page'),
   HomePage = require('../src/js/pages/homePage'),
-  ContactPage = require('../src/js/pages/contactsPage');
+  ContactPage = require('../src/js/pages/contactsPage'),
+  PhysicalOrEmotional = require('../src/js/pages/physicalOrEmotionalPage');
 
 describe('Application Router', function() {
 
@@ -29,6 +30,14 @@ describe('Application Router', function() {
         router.contacts();
         var isContactPage = router.renderView.calls.argsFor(0)[0] instanceof ContactPage;
         expect(isContactPage).toBeTruthy();
+      });
+    });
+
+    describe('#physicalOrEmotional', function() {
+      it('should load the physical or emotional screen', function() {
+        router.physicalOrEmotional();
+        var isPhysicalOrEmotionalPage = router.renderView.calls.argsFor(0)[0] instanceof PhysicalOrEmotional;
+        expect(isPhysicalOrEmotionalPage).toBeTruthy();
       });
     });
 
