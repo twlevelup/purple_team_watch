@@ -15,19 +15,19 @@ var questionView = PageView.extend({
   template: require('../../templates/pages/question.hbs'),
 
   buttonEvents: {
-    right: 'happyOption',
+    right: 'sadOption',
 
     //name:function
-    left: 'sadOption'
+    left: 'happyOption'
   },
 
   happyOption: function() {
-    this.$el.html('<div><p>:-)</p></div>');
 
   },
 
   sadOption: function() {
-    this.$el.html('<div><p>:-(</p></div>');
+    global.App.navigate('physicalOrEmotionalPage', true);
+
   },
 
   render: function() {

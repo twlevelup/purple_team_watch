@@ -19,24 +19,24 @@ describe('The Questionaire', function() {
 
     describe('when right button is clicked', function () {
 
-      it('should call happyOption function', function () {
-        spyOn(questionPage, 'happyOption');
+      it('should call sadOption function', function () {
+        spyOn(questionPage, 'sadOption');
         questionPage.setButtonEvents();
         questionPage.trigger('right');
 
-        expect(questionPage.happyOption).toHaveBeenCalled();
+        expect(questionPage.sadOption).toHaveBeenCalled();
       });
 
     });
 
     describe('when left button is clicked', function () {
 
-      it('should call sadOption function ', function () {
-        spyOn(questionPage,'sadOption');
+      it('should call happyOption function ', function () {
+        spyOn(questionPage,'happyOption');
         questionPage.setButtonEvents();
         questionPage.trigger('left');
 
-        expect(questionPage.sadOption).toHaveBeenCalled();
+        expect(questionPage.happyOption).toHaveBeenCalled();
       });
 
     });
