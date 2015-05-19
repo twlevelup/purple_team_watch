@@ -35,7 +35,7 @@ describe('Application Router', function() {
 
     describe('#physicalOrEmotional', function() {
       it('should load the physical or emotional screen', function() {
-        router.physicalOrEmotional();
+        router.physicalOrEmotionalPage();
         var isPhysicalOrEmotionalPage = router.renderView.calls.argsFor(0)[0] instanceof PhysicalOrEmotional;
         expect(isPhysicalOrEmotionalPage).toBeTruthy();
       });
