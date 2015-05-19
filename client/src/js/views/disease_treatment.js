@@ -1,10 +1,10 @@
 'use strict';
 
-var DiseaseView = Backbone.View.extend({
+var DiseaseTreatmentView = Backbone.View.extend({
 
   tagName: 'div class="disease"',
 
-  template: require('../../templates/views/disease.hbs'),
+  template: require('../../templates/views/disease_treatment.hbs'),
 
   initialize: function() {
     _.bindAll(this, 'render');
@@ -17,4 +17,4 @@ var DiseaseView = Backbone.View.extend({
 
 });
 
-module.exports = DiseaseView;
+module.exports = DiseaseTreatmentView;

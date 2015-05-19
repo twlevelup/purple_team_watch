@@ -21,11 +21,47 @@ var DiseasesView = PageView.extend({
 
   initialize: function() {
     var self = this;
-
     this.diseasesCollection = new DiseasesCollection();
     this.listenTo(this.diseasesCollection, 'change', this.render);
 
     self.seedDiseases();
+
+    this.currentDisease = this.diseasesCollection.at(0);
+
+    this.render();
+  },
+
+  right: function() {
+    var index = this.diseasesCollection.indexOf(this.currentDisease);
+    if (index === this.diseasesCollection.indexOf(this.diseasesCollection.last())) {
+      index = 0;
+    } else {
+      index += 1;
+    }
+
+    this.currentDisease = this.diseasesCollection.at(index);
+
+    this.render();
+  },
+
+  left: function() {
+    var index = this.diseasesCollection.indexOf(this.currentDisease);
+    if (index === 0) {
+      index = this.diseasesCollection.indexOf(this.diseasesCollection.last());
+    } else {
+      index -= 1;
+    }
+
+    this.currentDisease = this.diseasesCollection.at(index);
+
+    this.render();
+  },
+
+  select: function() {
+    this.$el.empty();
+
+    this.$el.html(this.template());
+
   },
 
   goToMenuPage: function() {
@@ -34,23 +70,29 @@ var DiseasesView = PageView.extend({
 
   seedDiseases: function() {
     this.diseasesCollection.push([
-      {name: 'Pneumonia'},
+      {name: 'Pneumonia',
+        symptoms: 'Ill health',
+        treatment: 'Take medicine',
+        prevention: 'Exercise caution'},
       {name: 'HIV/AIDS'},
-      {name: 'Malaria'}
+      {name: 'Malaria'},
+      {name: 'Diarrhoea'},
+      {name: 'Tuberculosis'},
+      {name: 'Measles'},
+      {name: 'Whooping Cough'},
+      {name: 'Depression'}
     ]);
   },
 
   render: function() {
 
     // this.$el = $('.disease');
+    this.$el.empty();
 
     this.$el.html(this.template());
 
     var diseasesHTML = document.createDocumentFragment();
-
-    this.diseasesCollection.each(function(disease) {
-      $(diseasesHTML).append(this.createDiseaseHTML(disease));
-    }, this);
+    $(diseasesHTML).append(this.createDiseaseHTML(this.currentDisease));
 
     this.$el.append(diseasesHTML);
 
@@ -63,6 +105,13 @@ var DiseasesView = PageView.extend({
     });
     return view.render().el;
   }
+
+  // createDiseaseSymptomsHTML: function(disease) {
+  //   this.currentView = new DiseaseSymptomsView({
+  //     model: disease
+  //   });
+  //   this.currentView.render().el;
+  // }
 
 }
 );
