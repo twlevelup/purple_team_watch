@@ -7,7 +7,8 @@ module.exports = {
   all: [
     'Gruntfile.js',
     'grunt/*.js',
-    'client/src/js/**/*.js',
+
+    //'client/src/js/**/*.js',
     'client/spec/**/*.spec.js'
   ]
 };

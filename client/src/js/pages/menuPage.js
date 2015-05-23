@@ -29,7 +29,7 @@ var menuView = PageView.extend({
   },
 
   goToFeature3: function() {
-    global.App.navigate('disease', true);
+    global.App.navigate('diseases', true);
   },
 
   goToFeature4: function() {

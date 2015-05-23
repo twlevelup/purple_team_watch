@@ -9,8 +9,6 @@ var DiseasesView = PageView.extend({
 
   id: 'diseases',
 
-  template: require('../../templates/pages/diseases.hbs'),
-
   buttonEvents: {
     top: 'goToMenuPage',
     left: 'left',
@@ -58,10 +56,7 @@ var DiseasesView = PageView.extend({
   },
 
   select: function() {
-    this.$el.empty();
-
-    this.$el.html(this.template());
-
+    global.App.router.navigate('diseases/' + this.currentDisease.get('urlName'), true);
   },
 
   goToMenuPage: function() {
@@ -70,26 +65,68 @@ var DiseasesView = PageView.extend({
 
   seedDiseases: function() {
     this.diseasesCollection.push([
-      {name: 'Pneumonia',
+      {
+        name: 'Pneumonia',
+        urlName: 'pneumonia',
         symptoms: 'Ill health',
         treatment: 'Take medicine',
-        prevention: 'Exercise caution'},
-      {name: 'HIV/AIDS'},
-      {name: 'Malaria'},
-      {name: 'Diarrhoea'},
-      {name: 'Tuberculosis'},
-      {name: 'Measles'},
-      {name: 'Whooping Cough'},
-      {name: 'Depression'}
+        prevention: 'Exercise caution'
+      },
+      {
+        name: 'HIV/AIDS',
+        urlName: 'aids',
+        symptoms: 'Ill health',
+        treatment: 'Take medicine',
+        prevention: 'Exercise caution'
+      },
+      {
+        name: 'Malaria',
+        urlName: 'malaria',
+        symptoms: 'Ill health',
+        treatment: 'Take medicine',
+        prevention: 'Exercise caution'
+      },
+      {
+        name: 'Diarrhoea',
+        urlName: 'diarrhoea',
+        symptoms: 'Ill health',
+        treatment: 'Take medicine',
+        prevention: 'Exercise caution'
+      },
+      {
+        name: 'Tuberculosis',
+        urlName: 'tuberculosis',
+        symptoms: 'Ill health',
+        treatment: 'Take medicine',
+        prevention: 'Exercise caution'
+      },
+      {
+        name: 'Measles',
+        urlName: 'measles',
+        symptoms: 'Ill health',
+        treatment: 'Take medicine',
+        prevention: 'Exercise caution'
+      },
+      {
+        name: 'Whooping Cough',
+        urlName: 'whooping-cough',
+        symptoms: 'Ill health',
+        treatment: 'Take medicine',
+        prevention: 'Exercise caution'
+      },
+      {
+        name: 'Depression',
+        urlName: 'depression',
+        symptoms: 'Ill health',
+        treatment: 'Take medicine',
+        prevention: 'Exercise caution'
+      }
     ]);
   },
 
   render: function() {
 
-    // this.$el = $('.disease');
     this.$el.empty();
-
-    this.$el.html(this.template());
 
     var diseasesHTML = document.createDocumentFragment();
     $(diseasesHTML).append(this.createDiseaseHTML(this.currentDisease));
@@ -106,35 +143,7 @@ var DiseasesView = PageView.extend({
     return view.render().el;
   }
 
-  // createDiseaseSymptomsHTML: function(disease) {
-  //   this.currentView = new DiseaseSymptomsView({
-  //     model: disease
-  //   });
-  //   this.currentView.render().el;
-  // }
-
 }
 );
 
 module.exports = DiseasesView;
-
-  // screenClickExample: function() {
-  //   this.$el.html('<div>Oh noes!</div>');
-  // },
-
-  // ,
-
-  // createContactHTML: function(contact) {
-  //     var view = new ContactView({
-  //       model: contact
-  //     });
-  //     return view.render().el;
-  //   }
-
-  // seedContacts: function() {
-  //   this.contactsCollection.push([
-  //     {name: 'Adam', phoneNumber: '0431 111 111'},
-  //     {name: 'James', phoneNumber: '0431 222 222'},
-  //     {name: 'Marzena', phoneNumber: '0431 333 333'}
-  //   ]);
-  // },
