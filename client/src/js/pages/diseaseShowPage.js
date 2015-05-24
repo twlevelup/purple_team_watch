@@ -58,12 +58,14 @@ var DiseasesShowView = PageView.extend({
   render: function() {
     this.$el.empty();
 
+    this.$el.prepend('<div class="feature-title">Health Facts</div>');
+
     if (this.detail === 'prevention') {
-      this.$el.html(this.preventionTemplate(this.model.attributes));
+      this.$el.append(this.preventionTemplate(this.model.attributes));
     } else if (this.detail === 'symptoms') {
-      this.$el.html(this.symptomsTemplate(this.model.attributes));
+      this.$el.append(this.symptomsTemplate(this.model.attributes));
     } else if (this.detail === 'treatment') {
-      this.$el.html(this.treatmentTemplate(this.model.attributes));
+      this.$el.append(this.treatmentTemplate(this.model.attributes));
     }
 
     return this;

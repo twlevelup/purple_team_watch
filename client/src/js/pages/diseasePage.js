@@ -131,7 +131,7 @@ var DiseasesView = PageView.extend({
     var diseasesHTML = document.createDocumentFragment();
     $(diseasesHTML).append(this.createDiseaseHTML(this.currentDisease));
 
-    this.$el.append(diseasesHTML);
+    this.$el.append(diseasesHTML).prepend('<div class="feature-title">Health Facts</div>');
 
     return this;
   },
