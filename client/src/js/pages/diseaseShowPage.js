@@ -56,6 +56,7 @@ var DiseasesShowView = PageView.extend({
   },
 
   render: function() {
+
     this.$el.empty();
 
     this.$el.prepend('<div class="feature-title">Health Facts</div>');

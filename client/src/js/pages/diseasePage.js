@@ -19,18 +19,19 @@ var DiseasesView = PageView.extend({
 
   initialize: function() {
     var self = this;
+
     this.diseasesCollection = new DiseasesCollection();
+
     this.listenTo(this.diseasesCollection, 'change', this.render);
 
     self.seedDiseases();
 
     this.currentDisease = this.diseasesCollection.at(0);
-
-    this.render();
   },
 
   right: function() {
     var index = this.diseasesCollection.indexOf(this.currentDisease);
+
     if (index === this.diseasesCollection.indexOf(this.diseasesCollection.last())) {
       index = 0;
     } else {
@@ -125,7 +126,6 @@ var DiseasesView = PageView.extend({
   },
 
   render: function() {
-
     this.$el.empty();
 
     var diseasesHTML = document.createDocumentFragment();
