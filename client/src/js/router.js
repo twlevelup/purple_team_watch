@@ -8,6 +8,8 @@ var Router = require('./framework/router.js'),
   DiseasePage = require('./pages/diseasePage'),
   DiseaseShowPage = require('./pages/diseaseShowPage'),
   PhysicalOrEmotionalPage = require('./pages/physicalOrEmotionalPage'),
+  ResultsPage = require('./pages/resultsPage'),
+  resultsPage = new ResultsPage(),
   homePage = new HomePage(),
   contactsPage = new ContactsPage(),
   menuPage = new MenuPage(),
@@ -23,6 +25,7 @@ var AppRouter = Router.extend({
     menu: 'menu',
     contacts: 'contacts',
     question: 'question',
+    results: 'results',
     diseases: 'diseases',
     'diseases/:disease': 'showDiseasePrevention',
     'diseases/:disease/prevention': 'showDiseasePrevention',
@@ -47,6 +50,10 @@ var AppRouter = Router.extend({
     this.renderView(questionPage);
   },
 
+  results: function() {
+    this.renderView(resultsPage);
+
+  },
   diseases: function() {
     this.renderView(diseasePage);
   },
@@ -65,7 +72,7 @@ var AppRouter = Router.extend({
   showDiseaseSymptoms: function(disease) {
     this.showDisease(disease, 'symptoms');
   },
-  
+
   showDiseaseTreatment: function(disease) {
     this.showDisease(disease, 'treatment');
   },
