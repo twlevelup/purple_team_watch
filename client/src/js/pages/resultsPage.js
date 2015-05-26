@@ -29,8 +29,13 @@ var ResultsPage = Page.extend({
   },
 
   render: function() {
+    var results = global.App.healthQuizResults.models.map(function(m) {
+      return m.toJSON();
+    });
 
-    this.$el.html(this.template());
+    this.$el.html(this.template({
+      results: results
+    }));
 
     return this;
 

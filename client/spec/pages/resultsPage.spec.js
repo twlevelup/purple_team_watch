@@ -54,14 +54,31 @@ describe('results', function() {
 
   describe('rendering', function () {
 
+    beforeEach(function () {
+      App.healthQuizResults.reset([
+        {
+        answer: 'happy'
+      }, {
+        answer: 'sad'
+      }
+    ]);
+    });
+
     it('should produce the correct HTML', function () {
       resultsPage.render();
       var html = resultsPage.$el.html();
-      expect(html).toContainText('results');
+      expect(html).toContainText('Health Quiz Results');
     });
 
     it('returns the view object', function() {
       expect(resultsPage.render()).toEqual(resultsPage);
+    });
+
+    it('should render all of the health quiz results', function () {
+      resultsPage.render();
+      var html = resultsPage.$el.html();
+      expect(html).toContainText('happy');
+      expect(html).toContainText('sad');
     });
 
   });

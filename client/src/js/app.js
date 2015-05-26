@@ -18,6 +18,8 @@ var App = {
 
     // App.navigate = navigate;
 
+    this.healthQuizResults = new Backbone.Collection();
+
     this.router = new Router();
 
     this.watchFace = new WatchFace();

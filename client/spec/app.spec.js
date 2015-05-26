@@ -22,6 +22,11 @@ describe('The App', function() {
     it('should setup the notifications', function() {
       expect(app.notifications instanceof NotificationsPanel).toBeTruthy();
     });
+
+    it('should have a collection called healthQuizResults', function() {
+      expect(app.healthQuizResults instanceof Backbone.Collection).toBeTruthy();
+    });
+
   });
 
   describe('navigate', function() {
