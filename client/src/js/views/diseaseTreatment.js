@@ -2,7 +2,8 @@
 
 var DiseaseTreatmentView = Backbone.View.extend({
 
-  tagName: 'div class="disease"',
+  tagName: 'div',
+  className: 'disease',
 
   template: require('../../templates/views/diseaseTreatment.hbs'),
 
