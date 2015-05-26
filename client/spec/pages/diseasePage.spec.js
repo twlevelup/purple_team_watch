@@ -3,7 +3,7 @@
 var DiseasePage = require('../../src/js/pages/diseasePage'),
   Router = require('../../src/js/router.js');
 
-global.router = new Router();
+global.App.router = new Router();
 
 describe('The Diseases Page', function() {
 
@@ -14,24 +14,46 @@ describe('The Diseases Page', function() {
     diseasePage = new DiseasePage();
   });
 
-  describe('diseases data', function () {
+  describe('display diseases data rendering', function () {
 
-    it('should have a diseases collection', function () {
-      expect(diseasePage.diseasesCollection).toBeDefined();
-    });
-
-  });
-
-  describe('rendering', function () {
-
-    it('should produce the correct HTML', function () {
+    beforeEach(function () {
       diseasePage.render();
-      // this test should better target this div <div class="disease">
-      expect(diseasePage.el.innerHTML).toContain('Health Facts');
     });
 
-    it('returns the view object', function() {
-      expect(diseasePage.render()).toEqual(diseasePage);
+    it('should display the name of the first disease', function () {
+      expect(diseasePage.$el.find('div.disease')[0].innerHTML).toContain(diseasePage.diseasesCollection.at(0).get('name'));
+    });
+
+    describe('clicking the right button', function(){
+       it('should display a new disease name', function(){
+          diseasePage.setButtonEvents();
+          diseasePage.trigger('right');
+          expect(diseasePage.$el.find('div.disease')[0].innerHTML).not.toContain(diseasePage.diseasesCollection.at(0).get('name'));
+          });
+
+       it('should display first disease name after the last disease name was displayed', function(){
+          diseasePage.setButtonEvents();
+          diseasePage.diseasesCollection.forEach(function(){
+            diseasePage.trigger('right');
+          });
+          expect(diseasePage.$el.find('div.disease')[0].innerHTML).toContain(diseasePage.diseasesCollection.at(0).get('name'));
+       });
+     });
+
+    describe('clicking the left button', function(){
+       it('should display the last disease name', function(){
+          diseasePage.setButtonEvents();
+          diseasePage.trigger('left');
+          expect(diseasePage.$el.find('div.disease')[0].innerHTML).toContain(diseasePage.diseasesCollection.last().get('name'));
+          });
+
+       it('should display first disease name after the last disease name was displayed', function(){
+          diseasePage.setButtonEvents();
+          diseasePage.diseasesCollection.forEach(function(){
+            diseasePage.trigger('left');
+          });
+          expect(diseasePage.$el.find('div.disease')[0].innerHTML).toContain(diseasePage.diseasesCollection.at(0).get('name'));
+       });
     });
 
   });
@@ -49,35 +71,15 @@ describe('The Diseases Page', function() {
 
     });
 
-    describe('right button clicking', function(){
-
-      it('should call function right', function(){
-        spyOn(diseasePage, 'right');
-        diseasePage.setButtonEvents();
-        diseasePage.trigger('right');
-        expect(diseasePage.right).toHaveBeenCalled();
-      });
-
-    });
-
-    describe('left button clicking', function(){
-
-      it('should call function left', function(){
-        spyOn(diseasePage, 'left');
-        diseasePage.setButtonEvents();
-        diseasePage.trigger('left');
-        expect(diseasePage.left).toHaveBeenCalled();
-      });
-
-    });
-
     describe('select button clicking', function(){
 
-      it('should call function select', function(){
-        spyOn(diseasePage, 'select');
+      it('should call navigate to the disease info page', function(){
+        spyOn(global.App.router, 'navigate');
+        diseasePage.render();
         diseasePage.setButtonEvents();
         diseasePage.trigger('face');
-        expect(diseasePage.select).toHaveBeenCalled();
+        expect(global.App.router.navigate.calls.argsFor(0)[0]).toContain('diseases/');
+
       });
 
     });
