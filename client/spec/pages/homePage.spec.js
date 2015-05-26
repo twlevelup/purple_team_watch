@@ -26,11 +26,11 @@ describe('The Home Page', function() {
         spyOn(global.App, 'navigate');
       });
 
-      it('should take the user to the contacts page', function () {
+      it('should take the user to the Health Quiz Results page', function () {
 
         homePage.trigger('right');
 
-        expect(global.App.navigate).toHaveBeenCalled();
+        expect(global.App.navigate).toHaveBeenCalledWith('results', true);
       });
 
     });
