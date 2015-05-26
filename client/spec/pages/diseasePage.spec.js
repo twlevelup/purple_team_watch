@@ -7,10 +7,10 @@ global.App.router = new Router();
 
 describe('The Diseases Page', function() {
 
-  var diseasePage, router;
+  var diseasePage;
 
   beforeEach(function () {
-    router = new Router();
+    global.App.router = new Router();
     diseasePage = new DiseasePage();
   });
 
@@ -71,15 +71,14 @@ describe('The Diseases Page', function() {
 
     });
 
-    describe('select button clicking', function(){
+    describe('Clicking face when on the first disease', function(){
 
       it('should call navigate to the disease info page', function(){
         spyOn(global.App.router, 'navigate');
         diseasePage.render();
         diseasePage.setButtonEvents();
         diseasePage.trigger('face');
-        expect(global.App.router.navigate.calls.argsFor(0)[0]).toContain('diseases/');
-
+        expect(global.App.router.navigate.calls.argsFor(0)[0]).toContain('diseases/' + diseasePage.diseasesCollection.at(0).get('name').toLowerCase());
       });
 
     });

@@ -1,7 +1,7 @@
 'use strict';
 
 var DiseaseShowPage = require('../../src/js/pages/diseaseShowPage'),
-  Router = require('../../src/js/router'),
+  Router = require('../../src/js/router.js'),
   App = require('../../src/js/app');
 
 global.App = App;
@@ -11,6 +11,7 @@ describe('The Disease Show Page', function() {
   var diseaseShowPage;
 
   beforeEach(function () {
+    global.App.router = new Router();
     diseaseShowPage = new DiseaseShowPage();
   });
 
@@ -39,6 +40,16 @@ describe('The Disease Show Page', function() {
 
   describe('handling button events', function(){
 
+    describe('bottom button clicking', function(){
+      it('should call navigate to the disease page', function(){
+        spyOn(global.App.router, 'navigate');
+        diseaseShowPage.render();
+        diseaseShowPage.setButtonEvents();
+        diseaseShowPage.trigger('bottom');
+        expect(global.App.router.navigate.calls.argsFor(0)[0]).toContain('diseases');
+      });
+    });
+
     describe('top button clicking', function(){
 
       it('should call function goToMenuPage', function(){
@@ -46,17 +57,6 @@ describe('The Disease Show Page', function() {
         diseaseShowPage.setButtonEvents();
         diseaseShowPage.trigger('top');
         expect(diseaseShowPage.goToMenuPage).toHaveBeenCalled();
-      });
-
-    });
-
-    describe('bottom button clicking', function(){
-
-      it('should call function back', function(){
-        spyOn(diseaseShowPage, 'back');
-        diseaseShowPage.setButtonEvents();
-        diseaseShowPage.trigger('bottom');
-        expect(diseaseShowPage.back).toHaveBeenCalled();
       });
 
     });
