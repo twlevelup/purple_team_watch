@@ -9,23 +9,21 @@ var RateYourPainPage = Page.extend({
   template: require('../../templates/pages/rateYourPainPage.hbs'),
 
   buttonEvents: {
-    right: '',
-    left: '',
+    right: 'highOption',
+    left: 'lowOption',
     top: '',
     bottom: '',
     face: ''
   },
 
-  goToContacts: function() {
-    global.App.navigate('contacts', true);
+  lowOption: function() {
+    global.App.pain = 'low';
+    global.App.navigate('haveTemperaturePage');
   },
 
-  scrollUp: function() {
-    $('#watch-face').animate({scrollTop: '-=70px'});
-  },
-
-  scrollDown: function() {
-    $('#watch-face').animate({scrollTop: '+=70px'});
+  highOption: function() {
+    global.App.pain = 'high';
+    global.App.navigate('haveTemperaturePage');
   },
 
   render: function() {

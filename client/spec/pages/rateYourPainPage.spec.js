@@ -18,17 +18,35 @@ describe('rate your pain', function() {
 
     beforeEach(function () {
       rateYourPainPage.setButtonEvents();
+      spyOn(global.App, 'navigate');
+      global.App.pain = undefined;
     });
 
     describe('left', function () {
 
-      xit('should have tests');
+      it('should take you to the temperature check page', function () {
+        rateYourPainPage.trigger('left');
+        expect(global.App.navigate).toHaveBeenCalledWith('haveTemperaturePage');
+      });
+
+      it('should remember your pain is low', function () {
+        rateYourPainPage.trigger('left');
+        expect(global.App.pain).toBe('low');
+      });
 
     });
 
     describe('right', function () {
 
-      xit('should have tests');
+      it('should take you to the temperature check page', function () {
+        rateYourPainPage.trigger('right');
+        expect(global.App.navigate).toHaveBeenCalledWith('haveTemperaturePage');
+      });
+
+      it('should remember your pain is high', function () {
+        rateYourPainPage.trigger('right');
+        expect(global.App.pain).toBe('high');
+      });
 
     });
 

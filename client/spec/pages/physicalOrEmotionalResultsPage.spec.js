@@ -22,18 +22,6 @@ describe('physicalOrEmotionalResultsPage', function() {
       spyOn(global.App, 'navigate');
     });
 
-    describe('left', function () {
-
-      xit('should have tests');
-
-    });
-
-    describe('right', function () {
-
-      xit('should have tests');
-
-    });
-
     describe('top', function () {
 
       it('should navigate to menuPage', function () {
@@ -49,12 +37,6 @@ describe('physicalOrEmotionalResultsPage', function() {
         physicalOrEmotionalResultsPage.trigger('bottom');
         expect(global.App.navigate).toHaveBeenCalledWith('physicalOrEmotionalPage');
       });
-
-    });
-
-    describe('face', function () {
-
-      xit('should have tests');
 
     });
 
