@@ -22,7 +22,7 @@ var questionView = PageView.extend({
   },
 
   happyOption: function() {
-
+    global.App.navigate('happyResultsPage', true);
   },
 
   sadOption: function() {

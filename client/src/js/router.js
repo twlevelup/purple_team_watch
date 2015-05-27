@@ -12,6 +12,8 @@ var Router = require('./framework/router.js'),
   PhysicalOrEmotionalResultsPage = require('./pages/physicalOrEmotionalResultsPage'),
   HaveTemperaturePage = require('./pages/haveTemperaturePage'),
   HaveTemperatureResultsPage = require('./pages/haveTemperatureResultsPage'),
+  HappyResultsPage = require('./pages/happyResultsPage'),
+  happyResultsPage = new HappyResultsPage(),
   homePage = new HomePage(),
   resultsPage = new ResultsPage(),
   contactsPage = new ContactsPage(),
@@ -40,7 +42,8 @@ var AppRouter = Router.extend({
     physicalOrEmotionalPage: 'physicalOrEmotionalPage',
     physicalOrEmotionalResultsPage: 'physicalOrEmotionalResultsPage',
     haveTemperaturePage: 'haveTemperaturePage',
-    haveTemperatureResultsPage: 'haveTemperatureResultsPage'
+    haveTemperatureResultsPage: 'haveTemperatureResultsPage',
+    happyResultsPage: 'happyResultsPage'
   },
 
   home: function() {
@@ -100,6 +103,10 @@ var AppRouter = Router.extend({
 
   haveTemperatureResultsPage : function () {
     this.renderView(haveTemperatureResultsPage);
+  },
+
+  happyResultsPage : function(){
+    this.renderView(happyResultsPage);
   }
 
 });

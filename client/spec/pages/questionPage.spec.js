@@ -32,11 +32,11 @@ describe('The Questionaire', function() {
     describe('when left button is clicked', function () {
 
       it('should call happyOption function ', function () {
-        spyOn(questionPage,'happyOption');
+        spyOn(global.App, 'navigate');
         questionPage.setButtonEvents();
         questionPage.trigger('left');
 
-        expect(questionPage.happyOption).toHaveBeenCalled();
+        expect(global.App.navigate).toHaveBeenCalledWith('happyResultsPage', true);
       });
 
     });
