@@ -22,4 +22,32 @@ describe('The Phyiscal Or Emotional Page', function() {
 
   });
 
+  describe('button event handlers', function () {
+
+    describe('when right button is clicked', function () {
+
+      it('should call tiredOption function', function () {
+        spyOn(physicalOrEmotionalPage, 'tiredOption');
+        physicalOrEmotionalPage.setButtonEvents();
+        physicalOrEmotionalPage.trigger('right');
+
+        expect(physicalOrEmotionalPage.tiredOption).toHaveBeenCalled();
+      });
+
+    });
+
+    describe('when left button is clicked', function () {
+
+      it('should call sadOption function ', function () {
+        spyOn(physicalOrEmotionalPage,'sadOption');
+        physicalOrEmotionalPage.setButtonEvents();
+        physicalOrEmotionalPage.trigger('left');
+
+        expect(physicalOrEmotionalPage.sadOption).toHaveBeenCalled();
+      });
+
+    });
+
+  });
+
 });
