@@ -11,6 +11,7 @@ describe('physicalOrEmotionalResultsPage', function() {
   var physicalOrEmotionalResultsPage;
 
   beforeEach(function () {
+    App.healthQuizResults.reset();
     physicalOrEmotionalResultsPage = new PhysicalOrEmotionalResultsPage();
   });
 
@@ -42,21 +43,8 @@ describe('physicalOrEmotionalResultsPage', function() {
 
     });
 
-    // describe('when right button is clicked', function () {
-
-    //   it('should call tiredOption function', function () {
-    //     spyOn(physicalOrEmotionalPage, 'tiredOption');
-    //     physicalOrEmotionalPage.setButtonEvents();
-    //     physicalOrEmotionalPage.trigger('right');
-
-    //     expect(physicalOrEmotionalPage.tiredOption).toHaveBeenCalled();
-    //   });
-
-    // });
-
     describe('bottom', function () {
 
-      // xit('should have tests');
       it('should navigate to previous Page', function () {
         physicalOrEmotionalResultsPage.trigger('bottom');
         expect(global.App.navigate).toHaveBeenCalledWith('physicalOrEmotionalPage');
@@ -73,6 +61,14 @@ describe('physicalOrEmotionalResultsPage', function() {
   });
 
   describe('rendering', function () {
+
+   it('should save the current answer', function() {
+      physicalOrEmotionalResultsPage.render();
+      var model = App.healthQuizResults.where({
+        answer: 'chill out'
+      });
+      expect(model.length).toEqual(1);
+    });
 
     it('should produce the correct HTML', function () {
       physicalOrEmotionalResultsPage.render();

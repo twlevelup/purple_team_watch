@@ -38,6 +38,8 @@ var physicalOrEmotionalResultsPage = Page.extend({
 
   render: function() {
 
+    global.App.healthQuizResults.add({answer: 'chill out'});
+
     this.$el.html(this.template());
 
     return this;
