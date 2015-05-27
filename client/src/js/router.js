@@ -44,10 +44,9 @@ var AppRouter = Router.extend({
     physicalOrEmotionalPage: 'physicalOrEmotionalPage',
     physicalOrEmotionalResultsPage: 'physicalOrEmotionalResultsPage',
     haveTemperaturePage: 'haveTemperaturePage',
-    haveTemperatureResultsPage: 'haveTemperatureResultsPage',
-    happyResultsPage: 'happyResultsPage'
     rateYourPainPage: 'rateYourPainPage',
-    haveTemperatureResultsPage: 'haveTemperatureResultsPage'
+    haveTemperatureResultsPage: 'haveTemperatureResultsPage',
+    happyResultsPage: 'happyResultsPage',
   },
 
   home: function() {
