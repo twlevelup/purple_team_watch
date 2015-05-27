@@ -57,11 +57,11 @@ describe('results', function() {
     beforeEach(function () {
       App.healthQuizResults.reset([
         {
-        answer: 'happy'
-      }, {
-        answer: 'sad'
-      }
-    ]);
+          answer: 'happy'
+        }, {
+          answer: 'sad'
+        }
+      ]);
     });
 
     it('should produce the correct HTML', function () {
