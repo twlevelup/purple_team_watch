@@ -42,7 +42,7 @@ describe('The Menu Page', function() {
 
     describe('right', function () {
 
-      it('should take the user to the Health Quiz Results page', function () {
+      it('should take the user to the Results page', function () {
         spyOn(global.App, 'navigate');
         menuPage.setButtonEvents();
         menuPage.trigger('right');
