@@ -14,6 +14,7 @@ var Router = require('./framework/router.js'),
   HaveTemperatureResultsPage = require('./pages/haveTemperatureResultsPage'),
   HappyResultsPage = require('./pages/happyResultsPage'),
   happyResultsPage = new HappyResultsPage(),
+  RateYourPainPage = require('./pages/rateYourPainPage'),
   homePage = new HomePage(),
   resultsPage = new ResultsPage(),
   contactsPage = new ContactsPage(),
@@ -24,7 +25,8 @@ var Router = require('./framework/router.js'),
   physicalOrEmotionalPage = new PhysicalOrEmotionalPage(),
   physicalOrEmotionalResultsPage = new PhysicalOrEmotionalResultsPage(),
   haveTemperaturePage = new HaveTemperaturePage(),
-  haveTemperatureResultsPage = new HaveTemperatureResultsPage();
+  haveTemperatureResultsPage = new HaveTemperatureResultsPage(),
+  rateYourPainPage = new RateYourPainPage();
 
 var AppRouter = Router.extend({
 
@@ -42,8 +44,13 @@ var AppRouter = Router.extend({
     physicalOrEmotionalPage: 'physicalOrEmotionalPage',
     physicalOrEmotionalResultsPage: 'physicalOrEmotionalResultsPage',
     haveTemperaturePage: 'haveTemperaturePage',
+<<<<<<< HEAD
     haveTemperatureResultsPage: 'haveTemperatureResultsPage',
     happyResultsPage: 'happyResultsPage'
+=======
+    rateYourPainPage: 'rateYourPainPage',
+    haveTemperatureResultsPage: 'haveTemperatureResultsPage'
+>>>>>>> b1579938174b52da8099f46941b640a5f912c387
   },
 
   home: function() {
@@ -99,6 +106,10 @@ var AppRouter = Router.extend({
 
   haveTemperaturePage : function () {
     this.renderView(haveTemperaturePage);
+  },
+
+  rateYourPainPage: function () {
+    this.renderView(rateYourPainPage);
   },
 
   haveTemperatureResultsPage : function () {

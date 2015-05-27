@@ -8,7 +8,8 @@ var AppRouter = require('../src/js/router.js'),
   PhysicalOrEmotionalPage = require('../src/js/pages/physicalOrEmotionalPage'),
   PhysicalOrEmotionalResultsPage = require('../src/js/pages/physicalOrEmotionalResultsPage'),
   HaveTemperaturePage = require('../src/js/pages/haveTemperaturePage'),
-  HaveTemperatureResultsPage = require('../src/js/pages/haveTemperatureResultsPage');
+  HaveTemperatureResultsPage = require('../src/js/pages/haveTemperatureResultsPage'),
+  RateYourPainPage = require('../src/js/pages/rateYourPainPage');
 
 describe('Application Router', function() {
 
@@ -66,6 +67,14 @@ describe('Application Router', function() {
         router.haveTemperaturePage();
         var isHaveTemperaturePage = router.renderView.calls.argsFor(0)[0] instanceof HaveTemperaturePage;
         expect(isHaveTemperaturePage).toBeTruthy();
+      });
+    });
+
+    describe('#RateYourPainPage', function() {
+      it('should load the have rate your pain screen', function() {
+        router.rateYourPainPage();
+        var isRateYourPainPage = router.renderView.calls.argsFor(0)[0] instanceof RateYourPainPage;
+        expect(isRateYourPainPage).toBeTruthy();
       });
     });
 
