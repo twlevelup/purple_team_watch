@@ -18,35 +18,34 @@ describe('haveTemperaturePage', function() {
 
     beforeEach(function () {
       haveTemperaturePage.setButtonEvents();
+      spyOn(global.App, 'navigate');
+      global.App.temperature = undefined;
     });
 
-    describe('left', function () {
+    _.each([{ button: 'left', text: 'left / I have temperature', temperatureValue: 'yes'},
+    { button: 'right', text: 'right / I don\'t have temperature', temperatureValue: 'no'}],
+      function(elem){
+        describe(elem.text, function () {
 
-      xit('should have tests');
+          it('should navigate to the temperature/pain result page' ,function(){
+            haveTemperaturePage.trigger(elem.button);
+            expect(global.App.navigate).toHaveBeenCalledWith('haveTemperatureResultsPage', true);
+          });
 
-    });
+          it('should set the correct temperature value', function() {
+            haveTemperaturePage.trigger(elem.button);
+            expect(global.App.temperature).toEqual(elem.temperatureValue);
+          });
 
-    describe('right', function () {
-
-      xit('should have tests');
-
-    });
-
-    describe('top', function () {
-
-      xit('should have tests');
-
+        });
     });
 
     describe('bottom', function () {
 
-      xit('should have tests');
-
-    });
-
-    describe('face', function () {
-
-      xit('should have tests');
+      it('should navigate to the rateYourPainPage', function(){
+        haveTemperaturePage.trigger('bottom');
+        expect(global.App.navigate).toHaveBeenCalledWith('rateYourPainPage', true);
+      });
 
     });
 

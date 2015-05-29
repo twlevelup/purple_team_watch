@@ -50,21 +50,12 @@ describe('rate your pain', function() {
 
     });
 
-    describe('top', function () {
-
-      xit('should have tests');
-
-    });
-
     describe('bottom', function () {
 
-      xit('should have tests');
-
-    });
-
-    describe('face', function () {
-
-      xit('should have tests');
+      it('should navigate to the physicalOrEmotionalPage', function(){
+        rateYourPainPage.trigger('bottom');
+        expect(global.App.navigate).toHaveBeenCalledWith('physicalOrEmotionalPage', true);
+      });
 
     });
 

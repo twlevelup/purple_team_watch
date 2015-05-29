@@ -12,7 +12,7 @@ var RateYourPainPage = Page.extend({
     right: 'highOption',
     left: 'lowOption',
     top: '',
-    bottom: '',
+    bottom: 'prevOption',
     face: ''
   },
 
@@ -24,6 +24,10 @@ var RateYourPainPage = Page.extend({
   highOption: function() {
     global.App.pain = 'high';
     global.App.navigate('haveTemperaturePage');
+  },
+
+  prevOption: function() {
+    global.App.navigate('physicalOrEmotionalPage', true);
   },
 
   render: function() {
