@@ -11,11 +11,12 @@ var haveTemperaturePage = Page.extend({
   buttonEvents: {
     right: 'handleNoTemperature',
     left: 'handleHighTemperature',
-    bottom: 'goToRateYourPainPage'
+    bottom: 'goToRateYourPainPage',
+    top: 'goToMenuPage'
   },
 
-  goToContacts: function() {
-    global.App.navigate('contacts', true);
+  goToMenuPage: function() {
+    global.App.navigate('menu', true);
   },
 
   handleHighTemperature: function(){

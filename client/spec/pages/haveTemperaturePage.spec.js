@@ -49,6 +49,15 @@ describe('haveTemperaturePage', function() {
 
     });
 
+    describe('top', function () {
+
+      it('should navigate to the menuPage', function(){
+        haveTemperaturePage.trigger('top');
+        expect(global.App.navigate).toHaveBeenCalledWith('menu', true);
+      });
+
+    });
+
   });
 
   describe('rendering', function () {

@@ -49,11 +49,21 @@ describe('haveTemperatureResultsPage', function() {
     describe('when I have temperature', function(){
       beforeEach(function(){
         global.App.temperature = 'yes';
+
+        global.App.healthQuizResults.reset();
       });
 
       describe('when my pain level is high', function(){
         beforeEach(function(){
           global.App.pain = 'high';
+        });
+
+       it('should save the current answer', function() {
+          thePage.render();
+          var model = App.healthQuizResults.where({
+            answer: 'go to doctor'
+          });
+          expect(model.length).toEqual(1);
         });
 
         it('should advise me to go to the doctor', function(){
@@ -73,6 +83,14 @@ describe('haveTemperatureResultsPage', function() {
           var html = thePage.$el.html();
           expect(html).toContainText('You should monitor your condition.');
         });
+
+        it('should save the current answer', function() {
+           thePage.render();
+           var model = App.healthQuizResults.where({
+             answer: 'monitor condition'
+           });
+           expect(model.length).toEqual(1);
+         });
       });
 
     });
@@ -80,6 +98,7 @@ describe('haveTemperatureResultsPage', function() {
     describe('when I don\'t have temperature', function(){
       beforeEach(function(){
         global.App.temperature = 'no';
+        global.App.healthQuizResults.reset();
       });
 
       describe('when my pain level is high', function(){
@@ -92,6 +111,14 @@ describe('haveTemperatureResultsPage', function() {
           var html = thePage.$el.html();
           expect(html).toContainText('You should monitor your condition.');
         });
+
+        it('should save the current answer', function() {
+           thePage.render();
+           var model = App.healthQuizResults.where({
+             answer: 'monitor condition'
+           });
+           expect(model.length).toEqual(1);
+         });
       });
 
       describe('when my pain level is low', function(){
@@ -104,6 +131,14 @@ describe('haveTemperatureResultsPage', function() {
           var html = thePage.$el.html();
           expect(html).toContainText('You should rest and recover.');
         });
+
+        it('should save the current answer', function() {
+           thePage.render();
+           var model = App.healthQuizResults.where({
+             answer: 'rest'
+           });
+           expect(model.length).toEqual(1);
+         });
       });
 
     });

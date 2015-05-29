@@ -35,7 +35,10 @@ var haveTemperatureResultsPage = Page.extend({
   },
 
   render: function() {
+
     var adviceOption = _.findWhere(this.adviceOptions, {temperature: global.App.temperature, pain: global.App.pain});
+
+    global.App.healthQuizResults.push({answer: adviceOption.answer});
     this.$el.html(this[adviceOption.template]());
     return this;
 
@@ -45,22 +48,26 @@ var haveTemperatureResultsPage = Page.extend({
     {
       temperature: 'yes',
       pain: 'high',
-      template: 'templateSeeDoctor'
+      template: 'templateSeeDoctor',
+      answer: 'go to doctor'
     },
     {
       temperature: 'yes',
       pain: 'low',
-      template: 'templateMonitorCondition'
+      template: 'templateMonitorCondition',
+      answer: 'monitor condition'
     },
     {
       temperature: 'no',
       pain: 'high',
-      template: 'templateMonitorCondition'
+      template: 'templateMonitorCondition',
+      answer: 'monitor condition'
     },
     {
       temperature: 'no',
       pain: 'low',
-      template: 'templateRest'
+      template: 'templateRest',
+      answer: 'rest'
     }
   ]
 

@@ -59,6 +59,15 @@ describe('rate your pain', function() {
 
     });
 
+    describe('top', function () {
+
+      it('should navigate to the menuPage', function(){
+        rateYourPainPage.trigger('top');
+        expect(global.App.navigate).toHaveBeenCalledWith('menu', true);
+      });
+
+    });
+
   });
 
   describe('rendering', function () {

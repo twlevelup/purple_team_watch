@@ -16,9 +16,8 @@ var questionView = PageView.extend({
 
   buttonEvents: {
     right: 'sadOption',
-
-    //name:function
-    left: 'happyOption'
+    left: 'happyOption',
+    top: 'menuOption'
   },
 
   happyOption: function() {
@@ -28,6 +27,10 @@ var questionView = PageView.extend({
   sadOption: function() {
     global.App.navigate('physicalOrEmotionalPage', true);
 
+  },
+
+  menuOption: function() {
+    global.App.navigate('menu', true);
   },
 
   render: function() {
