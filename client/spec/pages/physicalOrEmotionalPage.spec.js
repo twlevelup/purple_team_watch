@@ -39,7 +39,7 @@ describe('The Phyiscal Or Emotional Page', function() {
 
       it('should navigate to rateYourPainPage', function () {
         physicalOrEmotionalPage.trigger('right');
-        expect(global.App.navigate).toHaveBeenCalledWith('rateYourPainPage');
+        expect(global.App.navigate).toHaveBeenCalledWith('rateYourPainPage', true);
       });
 
     });
@@ -49,6 +49,15 @@ describe('The Phyiscal Or Emotional Page', function() {
       it('should navigate to physicalOrEmotionalResultsPage', function () {
         physicalOrEmotionalPage.trigger('left');
         expect(global.App.navigate).toHaveBeenCalledWith('physicalOrEmotionalResultsPage');
+      });
+
+    });
+
+    describe('when bottom button is clicked', function () {
+
+      it('should navigate to the questionPage', function () {
+        physicalOrEmotionalPage.trigger('bottom');
+        expect(global.App.navigate).toHaveBeenCalledWith('question', true);
       });
 
     });

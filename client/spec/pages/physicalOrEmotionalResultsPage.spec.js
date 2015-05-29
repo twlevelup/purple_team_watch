@@ -22,11 +22,28 @@ describe('physicalOrEmotionalResultsPage', function() {
       spyOn(global.App, 'navigate');
     });
 
+    describe('left', function () {
+
+      it('should navigate to menuPage', function () {
+        physicalOrEmotionalResultsPage.trigger('left');
+        expect(global.App.navigate).toHaveBeenCalledWith('menu');
+      });
+
+    });
+
+    describe('right', function () {
+
+      it('should navigate to menuPage', function () {
+        physicalOrEmotionalResultsPage.trigger('right');
+        expect(global.App.navigate).toHaveBeenCalledWith('menu');
+      });
+    });
+
     describe('top', function () {
 
       it('should navigate to menuPage', function () {
         physicalOrEmotionalResultsPage.trigger('top');
-        expect(global.App.navigate).toHaveBeenCalledWith('menuPage');
+        expect(global.App.navigate).toHaveBeenCalledWith('menu');
       });
 
     });
@@ -36,6 +53,15 @@ describe('physicalOrEmotionalResultsPage', function() {
       it('should navigate to previous Page', function () {
         physicalOrEmotionalResultsPage.trigger('bottom');
         expect(global.App.navigate).toHaveBeenCalledWith('physicalOrEmotionalPage');
+      });
+
+    });
+
+    describe('face', function () {
+
+      it('should navigate to menuPage', function () {
+        physicalOrEmotionalResultsPage.trigger('face');
+        expect(global.App.navigate).toHaveBeenCalledWith('menu');
       });
 
     });

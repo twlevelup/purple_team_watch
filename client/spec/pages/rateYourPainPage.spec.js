@@ -75,7 +75,7 @@ describe('rate your pain', function() {
     it('should produce the correct HTML', function () {
       rateYourPainPage.render();
       var html = rateYourPainPage.$el.html();
-      expect(html).toContainText('rate your pain');
+      expect(html).toContainText('Rate your Pain:');
     });
 
     it('returns the view object', function() {

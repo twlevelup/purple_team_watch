@@ -29,7 +29,7 @@ var physicalOrEmotionalResultsPage = Page.extend({
   },
 
   homeOption: function() {
-    global.App.navigate('menuPage');
+    global.App.navigate('menu');
   },
 
   backOption: function() {
