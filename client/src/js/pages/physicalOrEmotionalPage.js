@@ -11,7 +11,8 @@ var physicalOrEmotionalPage = PageView.extend({
   buttonEvents: {
     right: 'tiredOption',
     left: 'angryOption',
-    bottom: 'prevOption'
+    bottom: 'prevOption',
+    top: 'menuOption'
   },
 
   initialize: function() {
@@ -27,6 +28,10 @@ var physicalOrEmotionalPage = PageView.extend({
 
   prevOption: function(){
     global.App.navigate('question', true);
+  },
+
+  menuOption: function() {
+    global.App.navigate('menu', true);
   },
 
   render: function() {

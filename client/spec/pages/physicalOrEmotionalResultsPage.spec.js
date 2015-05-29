@@ -81,7 +81,7 @@ describe('physicalOrEmotionalResultsPage', function() {
     it('should produce the correct HTML', function () {
       physicalOrEmotionalResultsPage.render();
       var html = physicalOrEmotionalResultsPage.$el.html();
-      expect(html).toContainText('Chill out');
+      expect(html).toContainText('take a break');
     });
 
     it('returns the view object', function() {

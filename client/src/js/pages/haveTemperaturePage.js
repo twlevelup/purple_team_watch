@@ -9,15 +9,32 @@ var haveTemperaturePage = Page.extend({
   template: require('../../templates/pages/haveTemperaturePage.hbs'),
 
   buttonEvents: {
-    right: '',
-    left: '',
-    top: '',
-    bottom: '',
-    face: ''
+    right: 'handleNoTemperature',
+    left: 'handleHighTemperature',
+    bottom: 'goToRateYourPainPage',
+    top: 'goToMenuPage'
   },
 
-  goToContacts: function() {
-    global.App.navigate('contacts', true);
+  goToMenuPage: function() {
+    global.App.navigate('menu', true);
+  },
+
+  handleHighTemperature: function(){
+    global.App.temperature = 'yes';
+    this.goToHaveTemperatureResultsPage();
+  },
+
+  handleNoTemperature: function(){
+    global.App.temperature = 'no';
+    this.goToHaveTemperatureResultsPage();
+  },
+
+  goToHaveTemperatureResultsPage: function() {
+    global.App.navigate('haveTemperatureResultsPage', true);
+  },
+
+  goToRateYourPainPage: function(){
+    global.App.navigate('rateYourPainPage', true);
   },
 
   scrollUp: function() {

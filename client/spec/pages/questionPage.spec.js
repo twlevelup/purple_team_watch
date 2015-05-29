@@ -41,6 +41,18 @@ describe('The Questionaire', function() {
 
     });
 
+    describe('when top button is clicked', function() {
+
+      it('should call menuOption function', function() {
+        spyOn(global.App, 'navigate');
+        questionPage.setButtonEvents();
+        questionPage.trigger('top');
+
+        expect(global.App.navigate).toHaveBeenCalledWith('menu', true);
+      });
+
+    });
+
     // describe('displays the happy smiley when happyOption is called', function () {
 
     //   it('should show a :-) face and call happyOption function', function() {
@@ -55,7 +67,7 @@ describe('The Questionaire', function() {
 
     it('should produce the correct HTML', function () {
       questionPage.render();
-      expect(questionPage.el.innerHTML).toContain('<div class="question">How do you feel today?</div>');
+      expect(questionPage.el.innerHTML).toContain('<div class="question">How are you doing?</div>');
     });
 
     it('returns the view object', function() {

@@ -62,6 +62,15 @@ describe('The Phyiscal Or Emotional Page', function() {
 
     });
 
+    describe('when top button is clicked', function () {
+
+      it('should navigate to the menuPage', function () {
+        physicalOrEmotionalPage.trigger('top');
+        expect(global.App.navigate).toHaveBeenCalledWith('menu', true);
+      });
+
+    });
+
   });
 
 });

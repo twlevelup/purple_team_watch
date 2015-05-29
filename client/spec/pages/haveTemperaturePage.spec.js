@@ -18,35 +18,43 @@ describe('haveTemperaturePage', function() {
 
     beforeEach(function () {
       haveTemperaturePage.setButtonEvents();
+      spyOn(global.App, 'navigate');
+      global.App.temperature = undefined;
     });
 
-    describe('left', function () {
+    _.each([{ button: 'left', text: 'left / I have temperature', temperatureValue: 'yes'},
+    { button: 'right', text: 'right / I don\'t have temperature', temperatureValue: 'no'}],
+      function(elem){
+        describe(elem.text, function () {
 
-      xit('should have tests');
+          it('should navigate to the temperature/pain result page' ,function(){
+            haveTemperaturePage.trigger(elem.button);
+            expect(global.App.navigate).toHaveBeenCalledWith('haveTemperatureResultsPage', true);
+          });
 
+          it('should set the correct temperature value', function() {
+            haveTemperaturePage.trigger(elem.button);
+            expect(global.App.temperature).toEqual(elem.temperatureValue);
+          });
+
+        });
     });
 
-    describe('right', function () {
+    describe('bottom', function () {
 
-      xit('should have tests');
+      it('should navigate to the rateYourPainPage', function(){
+        haveTemperaturePage.trigger('bottom');
+        expect(global.App.navigate).toHaveBeenCalledWith('rateYourPainPage', true);
+      });
 
     });
 
     describe('top', function () {
 
-      xit('should have tests');
-
-    });
-
-    describe('bottom', function () {
-
-      xit('should have tests');
-
-    });
-
-    describe('face', function () {
-
-      xit('should have tests');
+      it('should navigate to the menuPage', function(){
+        haveTemperaturePage.trigger('top');
+        expect(global.App.navigate).toHaveBeenCalledWith('menu', true);
+      });
 
     });
 
@@ -57,7 +65,7 @@ describe('haveTemperaturePage', function() {
     it('should produce the correct HTML', function () {
       haveTemperaturePage.render();
       var html = haveTemperaturePage.$el.html();
-      expect(html).toContainText('haveTemperaturePage');
+      expect(html).toContainText('Do you have a temperature?');
     });
 
     it('returns the view object', function() {
