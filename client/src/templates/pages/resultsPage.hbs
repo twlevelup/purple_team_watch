@@ -1,12 +1,19 @@
-<h1>Health Quiz Results</h1>
 
-<ul>
-  <table>
-  {{#each results}}
-  	<tr>
-  		<td>{{answer}}</td>
-  		<td>{{date}}</td>
-  	</tr>
-  {{/each}}
-  </table>
-</ul>
+<div class="watch-frame">
+    <div class="frame-header history-header-bg">
+        <span class="small-text">Health Check History</span>
+    </div><!--./frame-header-->
+    
+    <div class="frame-content history-content-bg">
+
+		  <table class="history-table">
+		  	{{#each results}}
+		  	<tr>
+		  		<td class="quiz-answer">{{answer}}</td>
+		  		<td class="quiz-date">{{date}}</td>
+		  	</tr>
+		  	{{/each}}
+		  </table>
+
+    </div><!--./frame-content-->
+</div><!--./watch-frame-->

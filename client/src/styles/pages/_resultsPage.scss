@@ -1,8 +1,42 @@
+
 #results-page {
+
+/*
     background-color: #f8c90C;
     border-radius: 3em;
     width: 90%;
     height: 90%;
     margin-left: 15px;
   	margin-top: -5px;
+*/
+
+	.history-header-bg {
+	    background-color: #F8C90C;
+	}
+
+	.history-content-bg {
+	    background-color: #E4B702;
+	}
+
+	 .history-table {
+	    tr {
+	        border-top: 1px solid #fff;
+	        padding: 20px 10px;;
+	    }
+	}
+
+	.quiz-answer {
+		padding-left: 15px;
+	    display: inline-block;
+	    width: 180px;
+	    float: left;
+	    text-align: left;
+	}
+
+	.quiz-date {
+	    display: inline-block;
+	    float: right;
+	    text-align: right;
+	}
+
 }

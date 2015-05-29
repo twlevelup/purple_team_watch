@@ -69,7 +69,7 @@ describe('haveTemperatureResultsPage', function() {
         it('should advise me to go to the doctor', function(){
           thePage.render();
           var html = thePage.$el.html();
-          expect(html).toContainText('You should see a doctor.');
+          expect(html).toContainText('see a doctor.');
         });
       });
 
@@ -81,7 +81,7 @@ describe('haveTemperatureResultsPage', function() {
         it('should advise me to monitor my condition', function(){
           thePage.render();
           var html = thePage.$el.html();
-          expect(html).toContainText('You should monitor your condition.');
+          expect(html).toContainText('monitor your condition.');
         });
 
         it('should save the current answer', function() {
@@ -109,7 +109,7 @@ describe('haveTemperatureResultsPage', function() {
         it('should advise me to monitor my condition', function(){
           thePage.render();
           var html = thePage.$el.html();
-          expect(html).toContainText('You should monitor your condition.');
+          expect(html).toContainText('monitor your condition.');
         });
 
         it('should save the current answer', function() {
@@ -129,7 +129,7 @@ describe('haveTemperatureResultsPage', function() {
         it('should advise me to rest', function(){
           thePage.render();
           var html = thePage.$el.html();
-          expect(html).toContainText('You should rest and recover.');
+          expect(html).toContainText('rest and recover.');
         });
 
         it('should save the current answer', function() {

@@ -67,7 +67,7 @@ describe('results', function() {
     it('should produce the correct HTML', function () {
       resultsPage.render();
       var html = resultsPage.$el.html();
-      expect(html).toContainText('Health Quiz Results');
+      expect(html).toContainText('Health Check History');
     });
 
     it('returns the view object', function() {
