@@ -15,15 +15,6 @@ describe('The Disease Show Page', function() {
     diseaseShowPage = new DiseaseShowPage();
   });
 
-  describe('displaying illnesses', function(){
-    it('should display the name of the first illness', function () {
-      diseaseShowPage.render();
-      // this test should better target this div <div class="disease-info">
-      expect(diseaseShowPage.el.innerHTML).toContain('Health Facts');
-    });
-
-  });
-
   describe('rendering', function () {
 
     it('should produce the correct HTML', function () {
