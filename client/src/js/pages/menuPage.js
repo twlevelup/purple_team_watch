@@ -33,8 +33,7 @@ var menuView = PageView.extend({
   },
 
   goToFeature4: function() {
-    //to be implemented
-    // console.log('amy clicked');
+    global.App.navigate('snake', true);
   },
 
   render: function() {

@@ -1,0 +1,44 @@
+.snake {
+  position: relative;
+  margin: 100px;
+}
+
+.snake {
+
+  span {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #F80688;
+    opacity: 0.5;
+    border-radius: 20px;
+    -webkit-animation: snake 1s infinite ease-in-out;
+  }
+
+  span:nth-child(2){
+    left: 20px;
+    -webkit-animation-delay: 0.2s;
+  }
+
+  span:nth-child(3){
+    left: 40px;
+    -webkit-animation-delay: 0.4s;
+  }
+
+  span:nth-child(4){
+    left: 60px;
+    -webkit-animation-delay: 0.6s;
+  }
+
+  span:nth-child(5){
+    left: 80px;
+    -webkit-animation-delay: 0.8s;
+  }
+
+}
+
+@-webkit-keyframes snake {
+  0% {opacity: 0.3; transform:translateY(0px);    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);}
+  50% {opacity: 1; transform: translateY(-10px); background:#171d79;  box-shadow: 0px 20px 3px rgba(0, 0, 0, 0.05);}
+  100%  {opacity: 0.3; transform:translateY(0px); box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);}
+}
