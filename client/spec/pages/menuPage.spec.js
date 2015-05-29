@@ -40,13 +40,14 @@ describe('The Menu Page', function() {
 
     });
 
-    describe('right button clicking', function(){
+    describe('right', function () {
 
-      it('should call function goToFeature2', function(){
-        spyOn(menuPage, 'goToFeature2');
+      it('should take the user to the Results page', function () {
+        spyOn(global.App, 'navigate');
         menuPage.setButtonEvents();
         menuPage.trigger('right');
-        expect(menuPage.goToFeature2).toHaveBeenCalled();
+
+        expect(global.App.navigate).toHaveBeenCalledWith('results', true);
       });
 
     });

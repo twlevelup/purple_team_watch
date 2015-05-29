@@ -15,7 +15,7 @@ var menuView = PageView.extend({
 
   buttonEvents: {
     top: 'goToFeature1',
-    right: 'goToFeature2',
+    right: 'goToResults',
     bottom: 'goToFeature3',
     left: 'goToFeature4'
   },
@@ -24,9 +24,9 @@ var menuView = PageView.extend({
     global.App.navigate('question', true);
   },
 
-  goToFeature2: function() {
-    //to be implemented
-  },
+  goToResults: function() {
+      global.App.navigate('results', true);
+    },
 
   goToFeature3: function() {
     global.App.navigate('diseases', true);

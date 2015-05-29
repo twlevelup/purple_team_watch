@@ -1,23 +1,23 @@
 'use strict';
 
-var ResultsPage = require('../../src/js/pages/resultsPage.js'),
+var HaveTemperatureResultsPage = require('../../src/js/pages/haveTemperatureResultsPage'),
   Router = require('../../src/js/router'),
   App = require('../../src/js/app');
 
 global.App = App;
 
-describe('results', function() {
+describe('haveTemperatureResultsPage', function() {
 
-  var resultsPage;
+  var thePage;
 
   beforeEach(function () {
-    resultsPage = new ResultsPage();
+    thePage = new HaveTemperatureResultsPage();
   });
 
   describe('button event handlers', function () {
 
     beforeEach(function () {
-      resultsPage.setButtonEvents();
+      thePage.setButtonEvents();
     });
 
     describe('left', function () {
@@ -54,31 +54,14 @@ describe('results', function() {
 
   describe('rendering', function () {
 
-    beforeEach(function () {
-      App.healthQuizResults.reset([
-        {
-          answer: 'happy'
-        }, {
-          answer: 'sad'
-        }
-      ]);
-    });
-
     it('should produce the correct HTML', function () {
-      resultsPage.render();
-      var html = resultsPage.$el.html();
-      expect(html).toContainText('Health Quiz Results');
+      thePage.render();
+      var html = thePage.$el.html();
+      expect(html).toContainText('haveTemperatureResultsPage');
     });
 
     it('returns the view object', function() {
-      expect(resultsPage.render()).toEqual(resultsPage);
-    });
-
-    it('should render all of the health quiz results', function () {
-      resultsPage.render();
-      var html = resultsPage.$el.html();
-      expect(html).toContainText('happy');
-      expect(html).toContainText('sad');
+      expect(thePage.render()).toEqual(thePage);
     });
 
   });

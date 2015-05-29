@@ -7,6 +7,7 @@
 @import 'pages/diseases';
 @import 'pages/diseaseDetail';
 @import 'fontawesome/font-awesome';
+@import 'pages/resultsPage';
 
 .power {
   z-index: 1000;
@@ -16,4 +17,10 @@
   font-family: helvetica;
   font-weight: bold;
   color: #fff;
+}
+
+.page {
+	color: black;
+	font-family: Helvetica;
+    font-weight: bold;
 }

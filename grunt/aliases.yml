@@ -28,5 +28,4 @@ dev:
   - concurrent:dev
 
 pre-commit:
-  - format
   - test

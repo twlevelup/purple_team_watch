@@ -2,11 +2,11 @@
 
 var Page = require('../framework/page');
 
-var ResultsPage = Page.extend({
+var haveTemperatureResultsPage = Page.extend({
 
-  id: 'results-page',
+  id: 'haveTemperatureResults-page',
 
-  template: require('../../templates/pages/resultsPage.hbs'),
+  template: require('../../templates/pages/haveTemperatureResultsPage.hbs'),
 
   buttonEvents: {
     right: '',
@@ -29,13 +29,8 @@ var ResultsPage = Page.extend({
   },
 
   render: function() {
-    var results = global.App.healthQuizResults.models.map(function(m) {
-      return m.toJSON();
-    });
 
-    this.$el.html(this.template({
-      results: results
-    }));
+    this.$el.html(this.template());
 
     return this;
 
@@ -43,4 +38,4 @@ var ResultsPage = Page.extend({
 
 });
 
-module.exports = ResultsPage;
+module.exports = haveTemperatureResultsPage;

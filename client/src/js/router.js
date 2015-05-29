@@ -9,14 +9,24 @@ var Router = require('./framework/router.js'),
   DiseaseShowPage = require('./pages/diseaseShowPage'),
   PhysicalOrEmotionalPage = require('./pages/physicalOrEmotionalPage'),
   ResultsPage = require('./pages/resultsPage'),
-  resultsPage = new ResultsPage(),
+  PhysicalOrEmotionalResultsPage = require('./pages/physicalOrEmotionalResultsPage'),
+  HaveTemperaturePage = require('./pages/haveTemperaturePage'),
+  HaveTemperatureResultsPage = require('./pages/haveTemperatureResultsPage'),
+  HappyResultsPage = require('./pages/happyResultsPage'),
+  happyResultsPage = new HappyResultsPage(),
+  RateYourPainPage = require('./pages/rateYourPainPage'),
   homePage = new HomePage(),
+  resultsPage = new ResultsPage(),
   contactsPage = new ContactsPage(),
   menuPage = new MenuPage(),
   questionPage = new QuestionPage(),
   diseasePage = new DiseasePage(),
   diseaseShowPage = new DiseaseShowPage(),
-  physicalOrEmotionalPage = new PhysicalOrEmotionalPage();
+  physicalOrEmotionalPage = new PhysicalOrEmotionalPage(),
+  physicalOrEmotionalResultsPage = new PhysicalOrEmotionalResultsPage(),
+  haveTemperaturePage = new HaveTemperaturePage(),
+  haveTemperatureResultsPage = new HaveTemperatureResultsPage(),
+  rateYourPainPage = new RateYourPainPage();
 
 var AppRouter = Router.extend({
 
@@ -31,7 +41,12 @@ var AppRouter = Router.extend({
     'diseases/:disease/prevention': 'showDiseasePrevention',
     'diseases/:disease/treatment': 'showDiseaseTreatment',
     'diseases/:disease/symptoms': 'showDiseaseSymptoms',
-    physicalOrEmotionalPage: 'physicalOrEmotionalPage'
+    physicalOrEmotionalPage: 'physicalOrEmotionalPage',
+    physicalOrEmotionalResultsPage: 'physicalOrEmotionalResultsPage',
+    haveTemperaturePage: 'haveTemperaturePage',
+    rateYourPainPage: 'rateYourPainPage',
+    haveTemperatureResultsPage: 'haveTemperatureResultsPage',
+    happyResultsPage: 'happyResultsPage',
   },
 
   home: function() {
@@ -79,6 +94,26 @@ var AppRouter = Router.extend({
 
   physicalOrEmotionalPage : function () {
     this.renderView(physicalOrEmotionalPage);
+  },
+
+  physicalOrEmotionalResultsPage : function () {
+    this.renderView(physicalOrEmotionalResultsPage);
+  },
+
+  haveTemperaturePage : function () {
+    this.renderView(haveTemperaturePage);
+  },
+
+  rateYourPainPage: function () {
+    this.renderView(rateYourPainPage);
+  },
+
+  haveTemperatureResultsPage : function () {
+    this.renderView(haveTemperatureResultsPage);
+  },
+
+  happyResultsPage : function(){
+    this.renderView(happyResultsPage);
   }
 
 });

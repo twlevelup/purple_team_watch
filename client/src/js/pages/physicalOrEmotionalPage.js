@@ -8,6 +8,19 @@ var physicalOrEmotionalPage = PageView.extend({
 
   template: require('../../templates/pages/physicalOrEmotional.hbs'),
 
+  buttonEvents: {
+    right: 'tiredOption',
+    left: 'angryOption'
+  },
+
+  tiredOption: function() {
+    global.App.navigate('rateYourPainPage');
+  },
+
+  angryOption: function() {
+    global.App.navigate('physicalOrEmotionalResultsPage');
+  },
+
   render: function() {
     this.$el.html(this.template());
     return this;
