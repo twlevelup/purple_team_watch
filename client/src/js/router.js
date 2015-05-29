@@ -15,6 +15,7 @@ var Router = require('./framework/router.js'),
   HappyResultsPage = require('./pages/happyResultsPage'),
   happyResultsPage = new HappyResultsPage(),
   RateYourPainPage = require('./pages/rateYourPainPage'),
+  SnakePage = require('./pages/snakePage'),
   homePage = new HomePage(),
   resultsPage = new ResultsPage(),
   contactsPage = new ContactsPage(),
@@ -26,7 +27,8 @@ var Router = require('./framework/router.js'),
   physicalOrEmotionalResultsPage = new PhysicalOrEmotionalResultsPage(),
   haveTemperaturePage = new HaveTemperaturePage(),
   haveTemperatureResultsPage = new HaveTemperatureResultsPage(),
-  rateYourPainPage = new RateYourPainPage();
+  rateYourPainPage = new RateYourPainPage(),
+  snakePage = new SnakePage();
 
 var AppRouter = Router.extend({
 
@@ -37,6 +39,7 @@ var AppRouter = Router.extend({
     question: 'question',
     results: 'results',
     diseases: 'diseases',
+    snake: 'snake',
     'diseases/:disease': 'showDiseasePrevention',
     'diseases/:disease/prevention': 'showDiseasePrevention',
     'diseases/:disease/treatment': 'showDiseaseTreatment',
@@ -46,7 +49,7 @@ var AppRouter = Router.extend({
     haveTemperaturePage: 'haveTemperaturePage',
     rateYourPainPage: 'rateYourPainPage',
     haveTemperatureResultsPage: 'haveTemperatureResultsPage',
-    happyResultsPage: 'happyResultsPage',
+    happyResultsPage: 'happyResultsPage'
   },
 
   home: function() {
@@ -71,6 +74,10 @@ var AppRouter = Router.extend({
   },
   diseases: function() {
     this.renderView(diseasePage);
+  },
+
+  snake: function() {
+    this.renderView(snakePage);
   },
 
   showDisease: function(disease, detail) {

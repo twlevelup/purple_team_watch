@@ -18,35 +18,27 @@ describe('haveTemperatureResultsPage', function() {
 
     beforeEach(function () {
       thePage.setButtonEvents();
+      spyOn(global.App, 'navigate');
     });
 
-    describe('left', function () {
+    _.each(['left', 'right', 'top', 'face'], function(elem) {
 
-      xit('should have tests');
+      describe('clicking '+elem, function() {
 
-    });
+        it('should navigate to the menuPage', function() {
+          thePage.trigger(elem);
+          expect(global.App.navigate).toHaveBeenCalledWith('menu', true);
+        });
 
-    describe('right', function () {
-
-      xit('should have tests');
-
-    });
-
-    describe('top', function () {
-
-      xit('should have tests');
-
+      });
     });
 
     describe('bottom', function () {
 
-      xit('should have tests');
-
-    });
-
-    describe('face', function () {
-
-      xit('should have tests');
+      it('should navigate to the temperature page', function() {
+        thePage.trigger('bottom');
+        expect(global.App.navigate).toHaveBeenCalledWith('haveTemperaturePage', true);
+      });
 
     });
 
@@ -54,10 +46,101 @@ describe('haveTemperatureResultsPage', function() {
 
   describe('rendering', function () {
 
-    it('should produce the correct HTML', function () {
-      thePage.render();
-      var html = thePage.$el.html();
-      expect(html).toContainText('haveTemperatureResultsPage');
+    describe('when I have temperature', function(){
+      beforeEach(function(){
+        global.App.temperature = 'yes';
+
+        global.App.healthQuizResults.reset();
+      });
+
+      describe('when my pain level is high', function(){
+        beforeEach(function(){
+          global.App.pain = 'high';
+        });
+
+       it('should save the current answer', function() {
+          thePage.render();
+          var model = App.healthQuizResults.where({
+            answer: 'go to doctor'
+          });
+          expect(model.length).toEqual(1);
+        });
+
+        it('should advise me to go to the doctor', function(){
+          thePage.render();
+          var html = thePage.$el.html();
+          expect(html).toContainText('You should see a doctor.');
+        });
+      });
+
+      describe('when my pain level is low', function(){
+        beforeEach(function(){
+          global.App.pain = 'low';
+        });
+
+        it('should advise me to monitor my condition', function(){
+          thePage.render();
+          var html = thePage.$el.html();
+          expect(html).toContainText('You should monitor your condition.');
+        });
+
+        it('should save the current answer', function() {
+           thePage.render();
+           var model = App.healthQuizResults.where({
+             answer: 'monitor condition'
+           });
+           expect(model.length).toEqual(1);
+         });
+      });
+
+    });
+
+    describe('when I don\'t have temperature', function(){
+      beforeEach(function(){
+        global.App.temperature = 'no';
+        global.App.healthQuizResults.reset();
+      });
+
+      describe('when my pain level is high', function(){
+        beforeEach(function(){
+          global.App.pain = 'high';
+        });
+
+        it('should advise me to monitor my condition', function(){
+          thePage.render();
+          var html = thePage.$el.html();
+          expect(html).toContainText('You should monitor your condition.');
+        });
+
+        it('should save the current answer', function() {
+           thePage.render();
+           var model = App.healthQuizResults.where({
+             answer: 'monitor condition'
+           });
+           expect(model.length).toEqual(1);
+         });
+      });
+
+      describe('when my pain level is low', function(){
+        beforeEach(function(){
+          global.App.pain = 'low';
+        });
+
+        it('should advise me to rest', function(){
+          thePage.render();
+          var html = thePage.$el.html();
+          expect(html).toContainText('You should rest and recover.');
+        });
+
+        it('should save the current answer', function() {
+           thePage.render();
+           var model = App.healthQuizResults.where({
+             answer: 'rest'
+           });
+           expect(model.length).toEqual(1);
+         });
+      });
+
     });
 
     it('returns the view object', function() {

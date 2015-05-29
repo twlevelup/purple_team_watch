@@ -50,21 +50,21 @@ describe('rate your pain', function() {
 
     });
 
-    describe('top', function () {
-
-      xit('should have tests');
-
-    });
-
     describe('bottom', function () {
 
-      xit('should have tests');
+      it('should navigate to the physicalOrEmotionalPage', function(){
+        rateYourPainPage.trigger('bottom');
+        expect(global.App.navigate).toHaveBeenCalledWith('physicalOrEmotionalPage', true);
+      });
 
     });
 
-    describe('face', function () {
+    describe('top', function () {
 
-      xit('should have tests');
+      it('should navigate to the menuPage', function(){
+        rateYourPainPage.trigger('top');
+        expect(global.App.navigate).toHaveBeenCalledWith('menu', true);
+      });
 
     });
 
@@ -75,7 +75,7 @@ describe('rate your pain', function() {
     it('should produce the correct HTML', function () {
       rateYourPainPage.render();
       var html = rateYourPainPage.$el.html();
-      expect(html).toContainText('rate your pain');
+      expect(html).toContainText('Rate your pain:');
     });
 
     it('returns the view object', function() {

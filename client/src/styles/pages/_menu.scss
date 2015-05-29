@@ -2,7 +2,7 @@
   background-image: url('../../images/menu-background-2.png');
   background-repeat: no-repeat;
   background-position: center;
-  font-size: 16px;
+  font-size: 18px;
   height: 90%;
   width: 90%;
   position: absolute;
@@ -20,6 +20,7 @@
   margin: 0 auto;
   text-align: center;
   display: block;
+  line-height: 1.5em;
 }
 
 .top-tri, .bottom-tri, .right-tri, .left-tri {
@@ -46,7 +47,7 @@
 }
 
 .bottom-tri {
-  bottom: 25px;
+  bottom: 23px;
   left: 86px;
 }
 
@@ -57,4 +58,5 @@
 
 .left-tri {
   left: 0;
+  top: 125px;
 }

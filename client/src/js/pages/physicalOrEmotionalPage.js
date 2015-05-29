@@ -10,15 +10,28 @@ var physicalOrEmotionalPage = PageView.extend({
 
   buttonEvents: {
     right: 'tiredOption',
-    left: 'angryOption'
+    left: 'angryOption',
+    bottom: 'prevOption',
+    top: 'menuOption'
+  },
+
+  initialize: function() {
   },
 
   tiredOption: function() {
-    global.App.navigate('rateYourPainPage');
+    global.App.navigate('rateYourPainPage', true);
   },
 
   angryOption: function() {
     global.App.navigate('physicalOrEmotionalResultsPage');
+  },
+
+  prevOption: function(){
+    global.App.navigate('question', true);
+  },
+
+  menuOption: function() {
+    global.App.navigate('menu', true);
   },
 
   render: function() {
