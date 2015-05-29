@@ -67,7 +67,7 @@ describe('The Questionaire', function() {
 
     it('should produce the correct HTML', function () {
       questionPage.render();
-      expect(questionPage.el.innerHTML).toContain('<div class="question">How are you doing?</div>');
+      expect(questionPage.el.innerHTML).toContain('How are you doing?');
     });
 
     it('returns the view object', function() {

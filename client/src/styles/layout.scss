@@ -11,6 +11,17 @@
         color: #5e5e5e;
     }
 
+    h2 {
+        font-family: OpenSans-Light, Helvetica, Arial, sans-serif;
+        font-weight: normal;
+        font-size: 20pt;
+        color: #5e5e5e;
+    }
+
+    hr {
+        margin: 50px auto;
+    }
+
     p {
         font-size: 16pt;
         color: #999999;
@@ -20,4 +31,16 @@
 #right {
     float:right;
     margin-right: 15%;
+}
+
+@media (max-width: 600px) {
+
+    #left {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #right {
+        margin: 0 auto;
+    }
 }
