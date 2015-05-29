@@ -1,6 +1,7 @@
 'use strict';
 
 var Page = require('../framework/page');
+var QuizResult = require('../models/quizResult');
 
 var physicalOrEmotionalResultsPage = Page.extend({
 
@@ -37,14 +38,12 @@ var physicalOrEmotionalResultsPage = Page.extend({
   },
 
   render: function() {
-
-    global.App.healthQuizResults.add({answer: 'chill out'});
+    global.App.healthQuizResults.add({answer: 'Chill out'});
 
     this.$el.html(this.template());
 
     return this;
-
-  }
+  },
 
 });
 

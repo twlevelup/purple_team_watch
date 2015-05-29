@@ -4,6 +4,7 @@ var Router = require('./router'),
   WatchFace = require('./framework/watchFace'),
   NotificationsPanel = require('./framework/notifications'),
   availableNotificationTypes = require('./notifications/notificationsConfig'),
+  QuizResults = require('./collections/quizResults'),
   clock = require('./framework/clock');
 
 var App = {
@@ -15,10 +16,8 @@ var App = {
   },
 
   start: function() {
-
     // App.navigate = navigate;
-
-    this.healthQuizResults = new Backbone.Collection();
+    this.healthQuizResults = new QuizResults();
 
     this.router = new Router();
 

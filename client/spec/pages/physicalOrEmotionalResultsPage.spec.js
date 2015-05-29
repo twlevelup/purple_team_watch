@@ -47,7 +47,7 @@ describe('physicalOrEmotionalResultsPage', function() {
    it('should save the current answer', function() {
       physicalOrEmotionalResultsPage.render();
       var model = App.healthQuizResults.where({
-        answer: 'chill out'
+        answer: 'Chill out'
       });
       expect(model.length).toEqual(1);
     });
