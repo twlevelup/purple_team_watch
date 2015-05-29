@@ -55,7 +55,7 @@ describe('The Questionaire', function() {
 
     it('should produce the correct HTML', function () {
       questionPage.render();
-      expect(questionPage.el.innerHTML).toContain('<div class="question">How do you feel today?</div>');
+      expect(questionPage.el.innerHTML).toContain('<div class="question">How are you doing?</div>');
     });
 
     it('returns the view object', function() {

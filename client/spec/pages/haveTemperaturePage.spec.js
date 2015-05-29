@@ -57,7 +57,7 @@ describe('haveTemperaturePage', function() {
     it('should produce the correct HTML', function () {
       haveTemperaturePage.render();
       var html = haveTemperaturePage.$el.html();
-      expect(html).toContainText('haveTemperaturePage');
+      expect(html).toContainText('Do you have a temperature?');
     });
 
     it('returns the view object', function() {
