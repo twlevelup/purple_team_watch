@@ -15,6 +15,10 @@ var snakeView = PageView.extend({
 
   buttonEvents: {
     top: 'goToMenu',
+    left: 'goToMenu',
+    right: 'goToMenu',
+    bottom: 'goToMenu',
+    face: 'goToMenu'
   },
 
   goToMenu: function() {

@@ -9,11 +9,15 @@ var ResultsPage = Page.extend({
   template: require('../../templates/pages/resultsPage.hbs'),
 
   buttonEvents: {
-    right: '',
-    left: '',
-    top: '',
-    bottom: '',
-    face: ''
+    right: 'goToMenu',
+    left: 'goToMenu',
+    top: 'goToMenu',
+    bottom: 'goToMenu',
+    face: 'goToMenu'
+  },
+
+  goToMenu: function() {
+    global.App.router.navigate('menu', true);
   },
 
   goToContacts: function() {

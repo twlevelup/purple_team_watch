@@ -13,7 +13,7 @@ var DiseasesView = PageView.extend({
     top: 'goToMenuPage',
     left: 'left',
     right: 'right',
-    bottom: 'back',
+    bottom: 'goToMenuPage',
     face: 'select'
   },
 

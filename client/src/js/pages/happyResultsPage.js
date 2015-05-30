@@ -9,11 +9,15 @@ var happyResultsPage = Page.extend({
   template: require('../../templates/pages/happyResultsPage.hbs'),
 
   buttonEvents: {
-    right: '',
-    left: '',
-    top: '',
-    bottom: '',
-    face: ''
+    right: 'goToMenuPage',
+    left: 'goToMenuPage',
+    top: 'goToMenuPage',
+    bottom: 'goToMenuPage',
+    face: 'goToMenuPage'
+  },
+
+  goToMenuPage: function() {
+    global.App.router.navigate('menu', true);
   },
 
   scrollUp: function() {
