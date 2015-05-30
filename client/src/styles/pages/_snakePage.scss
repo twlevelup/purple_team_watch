@@ -1,14 +1,24 @@
+#snake {
+  height: 90%;
+  width: 90%;
+  background-color: rgb(0, 217, 191);
+  position: absolute;
+  border-radius: 3em;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
 .snake {
   position: relative;
-  margin: 100px;
+  margin: 120px 35px;
 }
 
 .snake {
 
   span {
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     background: #F80688;
     opacity: 0.5;
     border-radius: 20px;
@@ -16,22 +26,22 @@
   }
 
   span:nth-child(2){
-    left: 20px;
+    left: 40px;
     -webkit-animation-delay: 0.2s;
   }
 
   span:nth-child(3){
-    left: 40px;
+    left: 80px;
     -webkit-animation-delay: 0.4s;
   }
 
   span:nth-child(4){
-    left: 60px;
+    left: 120px;
     -webkit-animation-delay: 0.6s;
   }
 
   span:nth-child(5){
-    left: 80px;
+    left: 160px;
     -webkit-animation-delay: 0.8s;
   }
 
