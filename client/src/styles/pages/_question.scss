@@ -46,12 +46,12 @@
 }
 
 .frame-header .small-text {
-    font-size: 18px;
-    line-height: 2.1em;
+    font-size: 15px;
+    line-height: 40px;
 }
 
 .frame-content {
-    height: 215px;
+    height: 220px;
     width: 100%;
     display: block;
     text-align: center;
@@ -72,7 +72,7 @@
 
 .hc-question-bg {
     background-color: #F80688;
-    padding-top: 15px;
+    padding-top: 10px;
 }
 
 .hc-result-bg {
@@ -151,7 +151,7 @@
     background-image: url(../../images/ARROW_LEFT.png);
     background-size: 100% auto;
     float: left;
-    top: 45%;
+    top: 40%;
     position: relative;
     margin-left: 5px;
 }
@@ -162,7 +162,7 @@
     background-image: url(../../images/ARROW_RIGHT.png);
     background-size: 100% auto;
     float: right;
-    top: 45%;
+    top: 40%;
     position: relative;
     margin-right: 5px;
 }
