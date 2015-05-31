@@ -26,16 +26,26 @@
 }
 
 .case:before {
-	z-index: 99;
+	z-index: 9;
 }
 
 /**********************************
- * HELPER CLASSES
+ * WATCH BASE STYLES
  **********************************/
-.text-left {
-    text-align: left;
+.large-text {
+    font-size: 26px;
+    line-height: 31px;
+    padding: 10px 0;
 }
 
-.text-uppercase {
-    text-transform: uppercase;
-}   
+.medium-text {
+    font-size: 18px;
+    line-height: 22px;
+    padding: 10px 0;
+}
+
+.small-text {
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    line-height: 12px;
+}

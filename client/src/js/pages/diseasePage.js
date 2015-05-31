@@ -69,58 +69,58 @@ var DiseasesView = PageView.extend({
       {
         name: 'Pneumonia',
         urlName: 'pneumonia',
-        symptoms: 'Ill health',
-        treatment: 'Take medicine',
-        prevention: 'Exercise caution'
+        symptoms: 'Symptoms may include: breathing difficulties, fever, general malaise, loss of appetite, abdominal pain, headache, chest pain, cough, blue colouration of skin around the mouth.',
+        treatment: 'Possbile treatment may include: hospital admission, plenty of fluids, antibiotics, medications, rest – sitting up is better than lying down.',
+        prevention: 'Prevention measures includes: vacination, practicing good hygiene, not smoking, keeping immune system strong by getting enough sleep, regular exercise, and maintaining a healthy diet.'
       },
       {
         name: 'HIV/AIDS',
         urlName: 'aids',
         symptoms: 'Ill health',
         treatment: 'Take medicine',
-        prevention: 'Exercise caution'
+        prevention: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc urna est, fringilla a dictum quis, commodo ac erat. Mauris eget efficitur nulla. Donec eget sem et sapien sagittis vestibulum. Quisque in turpis a lorem congue faucibus.'
       },
       {
         name: 'Malaria',
         urlName: 'malaria',
         symptoms: 'Ill health',
         treatment: 'Take medicine',
-        prevention: 'Exercise caution'
+        prevention: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc urna est, fringilla a dictum quis, commodo ac erat. Mauris eget efficitur nulla. Donec eget sem et sapien sagittis vestibulum. Quisque in turpis a lorem congue faucibus.'
       },
       {
         name: 'Diarrhoea',
         urlName: 'diarrhoea',
         symptoms: 'Ill health',
         treatment: 'Take medicine',
-        prevention: 'Exercise caution'
+        prevention: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc urna est, fringilla a dictum quis, commodo ac erat. Mauris eget efficitur nulla. Donec eget sem et sapien sagittis vestibulum. Quisque in turpis a lorem congue faucibus.'
       },
       {
         name: 'Tuberculosis',
         urlName: 'tuberculosis',
         symptoms: 'Ill health',
         treatment: 'Take medicine',
-        prevention: 'Exercise caution'
+        prevention: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc urna est, fringilla a dictum quis, commodo ac erat. Mauris eget efficitur nulla. Donec eget sem et sapien sagittis vestibulum. Quisque in turpis a lorem congue faucibus.'
       },
       {
         name: 'Measles',
         urlName: 'measles',
         symptoms: 'Ill health',
         treatment: 'Take medicine',
-        prevention: 'Exercise caution'
+        prevention: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc urna est, fringilla a dictum quis, commodo ac erat. Mauris eget efficitur nulla. Donec eget sem et sapien sagittis vestibulum. Quisque in turpis a lorem congue faucibus.'
       },
       {
         name: 'Whooping Cough',
         urlName: 'whooping-cough',
         symptoms: 'Ill health',
         treatment: 'Take medicine',
-        prevention: 'Exercise caution'
+        prevention: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc urna est, fringilla a dictum quis, commodo ac erat. Mauris eget efficitur nulla. Donec eget sem et sapien sagittis vestibulum. Quisque in turpis a lorem congue faucibus.'
       },
       {
         name: 'Depression',
         urlName: 'depression',
         symptoms: 'Ill health',
         treatment: 'Take medicine',
-        prevention: 'Exercise caution'
+        prevention: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc urna est, fringilla a dictum quis, commodo ac erat. Mauris eget efficitur nulla. Donec eget sem et sapien sagittis vestibulum. Quisque in turpis a lorem congue faucibus.'
       }
     ]);
   },
