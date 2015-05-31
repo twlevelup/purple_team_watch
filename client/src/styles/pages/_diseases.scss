@@ -3,32 +3,65 @@
   text-align: center;
   color: #fff;
   z-index: -1000;
-  font-family: helvetica;
-  font-weight: bold;
   border-radius: 3em;
-  background-color: rgb(129, 180, 207);
   margin: 0 auto;
-  width: 90%
+  width: 90%;
+  height: 90%;
+  position: relative;
+  top: 15px;
+  display: block;
+  overflow: hidden;
 }
 
 .feature-title {
   background-color: rgb(23, 29, 121);
-  height: 40px;
-  line-height: 3em;
-  position: relative;
-  border-radius: 1000em 1000em 0 0;
+  line-height: 35px;
+  height: 35px;
   width: 100%;
-  margin: 0 auto;
-  margin-top: 15px;
+  text-align: center;
+  display: block;
+  text-transform: uppercase;
 }
 
 .disease {
-  height: 230px;
-
-  h1 {
-    margin: 0px;
-    line-height: 1em;
-    padding-top: 75px
-  }
-
+  background-color: rgb(129, 180, 207);
+  display: block;
+  height: 100%;
+  padding: 25px 20px 0;
 } 
+
+
+
+
+/**********************************
+ * FEATURE : HEALTH FACT SPECIFIC
+ **********************************/
+
+ /*
+.disease-menu-item {
+    padding-top: 25px;
+}
+
+.disease-info {
+    margin: 0 auto;
+    width: 140px;
+}
+
+.disease-entry {
+    padding-top: 10px;
+}
+
+
+
+.hf-header-bg {
+     background-color: #0E2B77;
+}
+
+.hf-menu-bg {
+    background-color: #3898D2;
+}
+
+.hf-info-bg {
+    background-color: #89B3CD;
+}
+*/

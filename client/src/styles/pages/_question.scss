@@ -38,7 +38,7 @@
 }
 
 .frame-header {
-    height: 40px;
+    height: 35px;
     width: 100%;
     text-align: center;
     display: block;
@@ -47,11 +47,11 @@
 
 .frame-header .small-text {
     font-size: 15px;
-    line-height: 40px;
+    line-height: 35px;
 }
 
 .frame-content {
-    height: 220px;
+    height: 230px;
     width: 100%;
     display: block;
     text-align: center;
@@ -72,24 +72,11 @@
 
 .hc-question-bg {
     background-color: #F80688;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 .hc-result-bg {
     background-color: #871151;
-}
-
-/* HEALTH FACTS */
-.hf-header-bg {
-     background-color: #0E2B77;
-}
-
-.hf-menu-bg {
-    background-color: #3898D2;
-}
-
-.hf-info-bg {
-    background-color: #89B3CD;
 }
 
             
@@ -121,25 +108,11 @@
 
 .hc-result {
     padding-top: 10px;
-    height: 220px;
+    height: 225px;
 }
 
 
-/**********************************
- * FEATURE : HEALTH FACT SPECIFIC
- **********************************/
-.disease-menu-item {
-    padding-top: 25px;
-}
 
-.disease-info {
-    margin: 0 auto;
-    width: 140px;
-}
-
-.disease-entry {
-    padding-top: 10px;
-}
 
 
 /**********************************
