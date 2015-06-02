@@ -76,16 +76,16 @@ var DiseasesView = PageView.extend({
       {
         name: 'HIV/AIDS',
         urlName: 'aids',
-        symptoms: 'Ill health',
-        treatment: 'Take medicine',
-        prevention: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc urna est, fringilla a dictum quis, commodo ac erat. Mauris eget efficitur nulla. Donec eget sem et sapien sagittis vestibulum. Quisque in turpis a lorem congue faucibus.'
+        symptoms: 'Sympotms may include: fever, headache, muscle aches, rash, chills, sore throat, mouth or genital ulcers, swollen lymph glands (mainly on the neck), joint paint, night sweats, diarrhoea.',
+        treatment: 'There is no cure for HIV/AIDS. But treatments include drug cocktails to strengthen the immune system.',
+        prevention: 'Prevention of HIV involves: knowing you and your partners HIV status, using protetion, limiting your number of sexual partners, not injecting drugs and taking to your health care provider about pre-exposure prophylaxis.'
       },
       {
         name: 'Malaria',
         urlName: 'malaria',
-        symptoms: 'Ill health',
-        treatment: 'Take medicine',
-        prevention: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc urna est, fringilla a dictum quis, commodo ac erat. Mauris eget efficitur nulla. Donec eget sem et sapien sagittis vestibulum. Quisque in turpis a lorem congue faucibus.'
+        symptoms: 'Sympotms may include: fever, chills, profuse sweating, malaise, muscle and joint pain, headache, confusion, nausea, loss of appetite, diarrhoea, abdominal pain, cough, anemia.',
+        treatment: 'Antimalarial medication is prescribed by a doctor.',
+        prevention: 'Malaria can be prevented by: staying inside when it is dark outside, wearing protective clothing, using insect repellent with DEET, using bed nets and avoiding areas where malaria and mosquitos are present especially for the pregnant, young or elderly.'
       },
       {
         name: 'Diarrhoea',
