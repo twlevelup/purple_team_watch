@@ -36,6 +36,7 @@ var ResultsPage = Page.extend({
     var results = global.App.healthQuizResults.models.map(function(m) {
       return m.toJSON();
     });
+    results.reverse();
 
     this.$el.html(this.template({
       results: results

@@ -20,35 +20,7 @@ describe('results', function() {
       resultsPage.setButtonEvents();
     });
 
-    describe('left', function () {
 
-      xit('should have tests');
-
-    });
-
-    describe('right', function () {
-
-      xit('should have tests');
-
-    });
-
-    describe('top', function () {
-
-      xit('should have tests');
-
-    });
-
-    describe('bottom', function () {
-
-      xit('should have tests');
-
-    });
-
-    describe('face', function () {
-
-      xit('should have tests');
-
-    });
 
   });
 
@@ -79,6 +51,12 @@ describe('results', function() {
       var html = resultsPage.$el.html();
       expect(html).toContainText('happy');
       expect(html).toContainText('sad');
+    });
+
+    it('should render all the results in reverse order', function() {
+      resultsPage.render();
+      var results = resultsPage.$el.find('td.quiz-answer').text();
+      expect(results).toEqual('RESULTsadhappy');
     });
 
   });
