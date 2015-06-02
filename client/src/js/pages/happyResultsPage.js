@@ -12,10 +12,10 @@ var happyResultsPage = Page.extend({
     right: 'goToMenuPage',
     left: 'goToMenuPage',
     top: 'goToMenuPage',
-    bottom: 'goToMenuPage',
+    bottom: 'back',
     face: 'goToMenuPage'
   },
-
+ 
   goToMenuPage: function() {
     global.App.router.navigate('menu', true);
   },
@@ -28,8 +28,12 @@ var happyResultsPage = Page.extend({
     $('#watch-face').animate({scrollTop: '+=70px'});
   },
 
-  render: function() {
+  back: function(){
+    global.App.router.navigate('question', true);
 
+  },
+  render: function() {
+    global.App.healthQuizResults.add({answer: 'good vibes'});
     this.$el.html(this.template());
 
     return this;
