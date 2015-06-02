@@ -17,6 +17,7 @@ var questionView = PageView.extend({
   buttonEvents: {
     right: 'sadOption',
     left: 'happyOption',
+    bottom: 'menuOption',
     top: 'menuOption'
   },
 
@@ -32,6 +33,8 @@ var questionView = PageView.extend({
   menuOption: function() {
     global.App.navigate('menu', true);
   },
+
+
 
   render: function() {
     this.$el.html(this.template());
